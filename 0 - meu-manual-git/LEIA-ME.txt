@@ -1,0 +1,7 @@
+
+  Eu construí este manual conforme executava o curso Git & Git Hub, para ser ágil na necessidade de cunsultas. 
+  
+  Para usufruir deste manual, é imperativo os procedimentos do vídeo: 
+    https://youtu.be/QXA0n2xI5fY
+  
+  ~By: Luciano Akira Yamamoto Bachega

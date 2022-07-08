@@ -1,0 +1,71 @@
+2022.01.(24) - (1647)
+	
+	AULA (15)
+		PRATICA (3) 
+		V@(2120)
+			CRIAR UMA MATRIZ IDENTIDADE DE 3ª ORDEM
+		
+		//DESENVOLVA O ALGORITMO, E 
+		//CONFORME AS VARIÁVEIS, 
+		//PROCEDIMENTOS E FUNÇÕES 
+		//FOREM SURGINDO 
+		//DECLARE-AS 
+		
+		//PARA ORGANIZAR EM MATRIZES 
+		//É NECESSÁRIO 
+		//"ESCREVA" NO PARA DE EXIBIR 
+		//E "ESCREVAL()" APÓS O PRIMEIRO FIMPARA 
+		
+			ALGORITMO "SEM NOME"
+			
+			VAR 
+				
+				MID: VETOR [1..3,1..3] DE INTEIRO
+				
+				I, J: INTEIRO
+			
+			INICIO
+				
+					PARA I <- 1 ATE 3 FACA 
+					
+							PARA J <- 1 ATE 3 FACA 
+							
+									SE (I=J) ENTAO 
+									
+										MID[I,J] <- 1 
+									
+									SENAO 
+									
+										MID[I,J] <- 0 
+									
+									FIMSE
+							
+							FIMPARA 
+							
+						
+					
+					FIMPARA 
+					
+					
+					
+					PARA I <- 1 ATE 3 FACA 
+					
+							PARA J <- 1 ATE 3 FACA 
+							
+								ESCREVA(MID[I,J])
+							
+							FIMPARA 
+							
+						ESCREVAL()
+					
+					FIMPARA 
+					
+					
+					
+			
+			FIMALGORITMO
+			
+			
+			
+2022.01.(24) - (1658)
+@(9)m - COM INTERVALOS

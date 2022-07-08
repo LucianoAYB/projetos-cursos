@@ -1,0 +1,260 @@
+2022.01.(25) - (1959)
+	
+	AULA (15)
+		PRATICA (4.1) 
+		V@(2445)
+			PREENCHER UMA MATRIZ DE 4ª ORDEM
+		
+		//DESENVOLVA O ALGORITMO, E 
+		//CONFORME AS VARIÁVEIS, 
+		//PROCEDIMENTOS E FUNÇÕES 
+		//FOREM SURGINDO 
+		//DECLARE-AS 
+		
+			ALGORITMO "SEM NOME"
+			
+			VAR 
+				
+				M: VETOR[1..4,1..4] DE INTEIRO 
+				L, C: INTEIRO 
+			
+			INICIO
+				
+					PARA L <- 1 ATE 4 FACA
+							
+							PARA C <- 1 ATE 4 FACA 
+							
+								ESCREVA("DIGITE O VALOR DA POSIÇÃO [", L, ", ", C, "]: ")
+								LEIA(M[L,C])
+							
+							FIMPARA 
+							
+					FIMPARA 
+			
+			FIMALGORITMO
+			
+			
+			
+		PRATICA 4.2
+			
+			E EXIBA A SOMA DOS VALORES DA DIAGONAL PRINCIPAL 
+			
+			
+			ALGORITMO "SEM NOME"
+			
+			VAR 
+				
+				M: VETOR[1..4,1..4] DE INTEIRO 
+				L, C, SDP: INTEIRO 
+			
+			INICIO
+				
+				SDP <- 0 
+				
+					PARA L <- 1 ATE 4 FACA
+							
+							PARA C <- 1 ATE 4 FACA 
+							
+								ESCREVA("DIGITE O VALOR DA POSIÇÃO [", L, ", ", C, "]: ")
+								LEIA(M[L,C])
+								
+									SE (L = C) ENTAO 
+									
+										SDP <- SDP + M[L,C]
+									
+									FIMSE 
+							
+							FIMPARA 
+							
+							
+							
+					FIMPARA 
+					
+					
+					PARA L <- 1 ATE 4 FACA 
+					
+							PARA C <- 1 ATE 4 FACA 
+							
+								ESCREVA(M[L,C])
+							
+							FIMPARA 
+							
+						ESCREVAL()
+					
+					FIMPARA 
+					
+					
+				ESCREVAL("A SOMA DOS VALORES DA DIAGONAL PRINCIPAL É: ", SDP)
+			
+			FIMALGORITMO
+			
+			
+			
+			PRATICA 4.3
+			
+				EXIBIR O PRODUTO DOS VALORES DA SEGUNDA LINHA 
+				
+				
+			ALGORITMO "SEM NOME"
+			
+			VAR 
+				
+				M: VETOR[1..4,1..4] DE INTEIRO 
+				L, C, SDP, P2L: INTEIRO 
+			
+			INICIO
+				
+				SDP <- 0 
+				P2L <- 1
+				
+					PARA L <- 1 ATE 4 FACA
+							
+							PARA C <- 1 ATE 4 FACA 
+							
+								ESCREVA("DIGITE O VALOR DA POSIÇÃO [", L, ", ", C, "]: ")
+								LEIA(M[L,C])
+								
+									SE (L = C) ENTAO 
+									
+										SDP <- SDP + M[L,C]
+									
+									FIMSE 
+									
+
+							
+							FIMPARA 
+							
+							
+							
+					FIMPARA 
+					
+					
+					PARA L <- 1 ATE 4 FACA 
+					
+							PARA C <- 1 ATE 4 FACA 
+							
+								ESCREVA(M[L,C])
+							
+							FIMPARA 
+							
+						ESCREVAL()
+					
+					FIMPARA 
+					
+					
+
+				
+					PARA C <- 1 ATE 4 FACA 
+					
+						P2L <- P2L * M[2,C]
+						
+					FIMPARA 
+					
+					
+					
+				ESCREVAL("A SOMA DOS VALORES DA DIAGONAL PRINCIPAL É: ", SDP)
+				ESCREVAL("O PRODUTO DOS VALORES DA SEGUNDA LINHA É: ", P2L)
+				
+			
+			FIMALGORITMO
+			
+			//HOUVE ERROS. 
+			//P2L NÃO HAVIA SIDO DECLARADO CORRETAMENTE AO ATRIBUIR VALOR EX: "PL2"
+			//O COMANDO "FACA" FOI DIGITADO INCORRETAMENTE "FAÇA"
+			
+			
+			
+			PRATICA 4.4 
+			
+				EXIBIR O MAIOR VALORA DA TERCEIRA COLUNA 
+				
+				
+				
+			ALGORITMO "SEM NOME"
+			
+			VAR 
+				
+				M: VETOR[1..4,1..4] DE INTEIRO 
+				L, C, SDP, P2L, MAI3C: INTEIRO 
+			
+			INICIO
+				
+				SDP <- 0 
+				P2L <- 1
+				MAI3C <- 0
+				
+					PARA L <- 1 ATE 4 FACA
+							
+							PARA C <- 1 ATE 4 FACA 
+							
+								ESCREVA("DIGITE O VALOR DA POSIÇÃO [", L, ", ", C, "]: ")
+								LEIA(M[L,C])
+								
+									SE (L = C) ENTAO 
+									
+										SDP <- SDP + M[L,C]
+									
+									FIMSE 
+									
+
+							
+							FIMPARA 
+							
+							
+							
+					FIMPARA 
+					
+					
+					PARA L <- 1 ATE 4 FACA 
+					
+							PARA C <- 1 ATE 4 FACA 
+							
+								ESCREVA(M[L,C])
+							
+							FIMPARA 
+							
+						ESCREVAL()
+					
+					FIMPARA 
+					
+					
+
+				
+					PARA C <- 1 ATE 4 FACA 
+					
+						P2L <- P2L * M[2,C]
+						
+					FIMPARA 
+					
+					PARA L <- 1 ATE 4 FACA 
+					
+						SE (M[L,3] > MAI3C) ENTAO 
+						
+							MAI3C <- M[L,3]
+						
+						FIMSE 
+					
+					FIMPARA 
+					
+					
+					
+				ESCREVAL("A SOMA DOS VALORES DA DIAGONAL PRINCIPAL É: ", SDP)
+				ESCREVAL("O PRODUTO DOS VALORES DA SEGUNDA LINHA É: ", P2L)
+				ESCREVAL("O MAIOR VALOR DA TERCEIRA COLUNA É: ", MAI3C)
+				
+			
+			FIMALGORITMO
+			
+			//HOUVE ERROS. 
+			//P2L NÃO HAVIA SIDO DECLARADO CORRETAMENTE AO ATRIBUIR VALOR EX: "PL2"
+			//O COMANDO "FACA" FOI DIGITADO INCORRETAMENTE "FAÇA"
+				
+				
+				
+				
+			
+			
+			
+			
+2022.01.(25) - (2019)
+@(20)m - SEM INTERVALOS

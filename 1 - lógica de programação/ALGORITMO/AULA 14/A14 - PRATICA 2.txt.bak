@@ -1,0 +1,106 @@
+2022.01.(22) - (1707)
+	
+	AULA (14)
+		PRATICA (2) 
+		V@(1520)
+			LISTAGEM DA TURMA
+		
+		//DESENVOLVA O ALGORITMO, E 
+		//CONFORME AS VARIÁVEIS
+		//PROCEDIMENTOS E FUNÇÕES 
+		//FOREM SURGINDO 
+		//DECLARE-AS 
+		
+			ALGORITMO "SEM NOME"
+			
+			VAR 
+				NOME: VETOR[1..4] DE CARACTERE
+				N1: VETOR[1..4] DE REAL
+				N2: VETOR[1..4] DE REAL 
+				M: VETOR [1..4] DE REAL 
+				I: INTEIRO
+			
+			INICIO
+				
+				PARA I <- 1 ATE 4 FACA 
+				
+					ESCREVAL("ALUNO ", I)
+					ESCREVA("NOME: ")
+					LEIA(NOME[I])
+					ESCREVA("PRIMEIRA NOTA: ")
+					LEIA(N1[I])
+					ESCREVA("SEGUNDA NOTA: ")
+					LEIA(N2[I])
+					M[I] <- (n1[i]+n2[i])/2
+					
+				FIMPARA 
+				
+				LIMPATELA
+				
+				ESCREVAL("LISTAGEM DE ALUNOS")
+				ESCREVAL("------------------")
+				PARA I <- 1 ATE 4 FACA 
+					ESCREVAL(NOME[I]:15, M[I]:4:1)
+				FIMPARA 
+			
+			FIMALGORITMO
+			
+			
+			
+		PRÁTICA 2.2
+		
+			LISTAGEM DA TURMA
+			QUAIS SÃO OS ALUNOS ACIMA DA MÉDIA
+			
+			
+			ALGORITMO "SEM NOME"
+			
+			VAR 
+				NOME: VETOR[1..4] DE CARACTERE
+				N1: VETOR[1..4] DE REAL
+				N2: VETOR[1..4] DE REAL 
+				M: VETOR [1..4] DE REAL 
+				I, TOT: INTEIRO
+				SM, MT: REAL 
+			
+			INICIO
+				
+				PARA I <- 1 ATE 4 FACA 
+				
+					ESCREVAL("ALUNO ", I)
+					ESCREVA("NOME: ")
+					LEIA(NOME[I])
+					ESCREVA("PRIMEIRA NOTA: ")
+					LEIA(N1[I])
+					ESCREVA("SEGUNDA NOTA: ")
+					LEIA(N2[I])
+					M[I] <- (n1[i]+n2[i])/2
+					SM <- SM + M[I]
+					
+				FIMPARA 
+				
+				MT <- SM/4
+				
+				LIMPATELA
+				
+				ESCREVAL("LISTAGEM DE ALUNOS")
+				ESCREVAL("------------------")
+				PARA I <- 1 ATE 4 FACA 
+				
+					ESCREVAL(NOME[I]:15, M[I]:4:1)
+					
+					SE (M[I] > MT) ENTAO
+						TOT <- TOT+1
+					FIMSE 
+					
+				FIMPARA 
+				
+				ESCREVAL("AO TODO TEMOS ", TOT, " ALUNOS ACIMA DA MÉDIA DA TURMA QUE É: ", MT:4:1)
+				
+			
+			FIMALGORITMO
+			
+			
+			
+2022.01.(22) - (1757)
+@(50)m - COM INTERVALOS

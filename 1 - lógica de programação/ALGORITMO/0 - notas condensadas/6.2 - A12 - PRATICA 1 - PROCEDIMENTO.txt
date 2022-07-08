@@ -1,0 +1,138 @@
+2022.01.(21) - (2232)
+	
+	AULA (12)
+		PRATICA (1.1) 
+		V@(0425)
+			DETECTOR DE PESADO
+		
+		//DESENVOLVA O ALGORITMO, E 
+		//CONFORME AS VARIÁVEIS FOREM SURGINDO
+		//DECLARE-AS
+		
+			ALGORITMO "SEM NOME"
+			
+			VAR 
+				I: INTEIRO
+				N, PESADO: CARACTERE
+				P, MAI: REAL
+			
+			INICIO
+				LIMPATELA
+				ESCREVAL("------------------------------------")
+				ESCREVAL("  D E T E C T O R  D E  P E S A D O ")
+				ESCREVAL("   MAIOR PESO ATE AGORA: ", MAI, "Kg")
+				ESCREVAL("------------------------------------")
+				
+				PARA I <- 1 ATE 5 FACA
+					ESCREVA("DIGITE O NOME: ")
+					LEIA (N)
+					ESCREVA("DIGITE O PESO DE ", N, ": ")
+					LEIA (P)
+					
+					SE (P > MAI) ENTAO
+					
+						MAI <- P 
+						PESADO <- N 
+					FIMSE
+					
+					
+				LIMPATELA
+				ESCREVAL("------------------------------------")
+				ESCREVAL("  D E T E C T O R  D E  P E S A D O ")
+				ESCREVAL("   MAIOR PESO ATE AGORA: ", MAI, "Kg")
+				ESCREVAL("------------------------------------")
+				
+				FIMPARA
+				
+				LIMPATELA
+				
+				ESCREVAL("------------------------------------")
+				ESCREVAL("  D E T E C T O R  D E  P E S A D O ")
+				ESCREVAL("   MAIOR PESO ATE AGORA: ", MAI, "Kg")
+				ESCREVAL("------------------------------------")
+				ESCREVAL("A PESSOA MAIS PESADA FOI ", PESADO, ", COM ", MAI, " QUILOS. ")
+			
+			FIMALGORITMO
+			
+			
+			//NOTA-SE QUE TEMOS 4 LINHAS REPETIDAS
+			//"LIMPA TELA", E 4 LINHAS ESCRITAS
+			
+			//ESTAS REPETIÇÕES SERÃO TRANSFORMADAS EM UM PROCEDIMENTO
+			
+			
+			
+			
+		PRÁTICA 1.2
+		
+		
+						ALGORITMO "SEM NOME"
+			
+			VAR 
+				I: INTEIRO
+				N, PESADO: CARACTERE
+				P, MAI: REAL
+				
+					PROCEDIMENTO TOPO()
+					
+					INICIO
+					
+						LIMPATELA
+						ESCREVAL("------------------------------------")
+						ESCREVAL("  D E T E C T O R  D E  P E S A D O ")
+						ESCREVAL("   MAIOR PESO ATE AGORA: ", MAI, "Kg")
+						ESCREVAL("------------------------------------")
+					
+					FIMPROCEDIMENTO
+					
+					
+				//COMANDO: "PROCEDIMENTO", 
+				//ENTRADA<NOME DO PROCEDIMENTO>: "TOPO"
+				//COMANDO "()" - PARA POSTERIORES APLICAÇÕES
+			
+			INICIO
+				
+				TOPO()
+				
+				PARA I <- 1 ATE 5 FACA
+					ESCREVA("DIGITE O NOME: ")
+					LEIA (N)
+					ESCREVA("DIGITE O PESO DE ", N, ": ")
+					LEIA (P)
+					
+					SE (P > MAI) ENTAO
+					
+						MAI <- P 
+						PESADO <- N 
+					FIMSE
+					
+					
+				TOPO()
+				
+				FIMPARA
+				
+				
+				TOPO()
+				
+				ESCREVAL("A PESSOA MAIS PESADA FOI ", PESADO, ", COM ", MAI, " QUILOS. ")
+			
+			
+			FIMALGORITMO
+			
+			
+			
+			
+			//NOTE QUE O USO DO PROCEDIMENTO "TOPO()" 
+			//DEIXA O PROGRAMA MENOR
+			
+			//POIS EXISTEM COMANDOS "TOPO()" 
+			//QUE NORMALMENTE NÃO EXISTIRIAM NO ALGORITMO 
+			
+			//PORÉM, AGORA, SEMPRE QUE CHAMADO O COMANDO "TOPO()"
+			//SERÁ EXECUTADO O PROCEDIMENTO DECLARADO
+			//NO BLOCO "VAR" DO ALGORITMO
+			
+			
+			
+2022.01.(21) - (2257)
+@(25)m - SEM INTERVALOS

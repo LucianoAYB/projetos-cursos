@@ -1,0 +1,106 @@
+2022.01.(21) - (1654)
+	
+	AULA (10)
+		PRATICA (3.1) 
+		V@(1513)
+			CALCULAR O FATORIAL DE UM NUMERO
+
+		//DESENVOLVA O ALGORITMO, E 
+		//CONFORME AS VARIÁVEIS FOREM SURGINDO
+		//DECLARE-AS
+		
+			ALGORITMO "SEM NOME"
+			
+			VAR 
+				C, N: INTEIRO
+			
+			INICIO
+			
+				ESCREVA("DIGITE UM NÚMERO: ")
+				LEIA(N)
+				
+				C <- N 
+				
+				REPITA
+					
+					ESCREVA(C, " X ")
+					
+				ATE (C<1)
+			
+			FIMALGORITMO
+			
+			
+		
+		PRATICA 3.2
+		
+			
+			ALGORITMO "SEM NOME"
+			
+			VAR 
+				C, N, F: INTEIRO
+				
+				
+			INICIO
+			
+			
+				ESCREVA("DIGITE UM NÚMERO: ")
+				LEIA(N)
+				C <- N
+				F <- 1
+				
+				
+				REPITA
+					
+					F <- F * C 
+					C <- C-1
+					
+				ATE (C<1)
+				
+				ESCREVA("O VALOR DO FATORIAL DE ", N, " É ", F)
+			
+			FIMALGORITMO
+			
+			
+			
+		PRATICA 3.3
+			
+			//FATORIAL PARA VÁRIOS NÚMEROS
+			//DECLARADO VARIÁVEL R
+			
+			
+			
+			ALGORITMO "FATORIAL"
+			
+			VAR 
+				C, N, F: INTEIRO
+				R: CARACTERE
+			
+			INICIO
+			
+				REPITA
+					ESCREVA("DIGITE UM NÚMERO: ")
+					LEIA(N)
+					C <- N
+					F <- 1
+					
+					
+					REPITA
+						
+						F <- F * C 
+						C <- C-1
+						
+					ATE (C<1)
+				
+					ESCREVAL("O VALOR DO FATORIAL DE ", N, " É ", F)
+					
+					ESCREVA("QUER CONTINUAR? [S/N]")
+					LEIA(R)
+				
+				ATE(R = "N")
+			
+			FIMALGORITMO
+			
+			
+			
+2022.01.(21) - (1703)
+@(11)m - SEM INTERVALOS

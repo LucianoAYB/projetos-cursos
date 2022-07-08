@@ -1,0 +1,136 @@
+2022.01.(22) - (0101)
+	
+	AULA (13)
+		PRATICA (3) 
+		V@(1414)
+			CÁLCULO FATORIAL DE UM NÚMERO
+		
+		//DESENVOLVA O ALGORITMO, E 
+		//CONFORME AS VARIÁVEIS
+		//PROCEDIMENTOS E FUNÇÕES 
+		//FOREM SURGINDO 
+		//DECLARE-AS 
+		
+			ALGORITMO "SEM NOME"
+			
+			VAR 
+				
+				N, F: INTEIRO
+				
+					FUNCAO FATORIAL(V: INTEIRO):INTEIRO 
+					
+					VAR 
+						
+						C, R: INTEIRO 
+					
+					INICIO 
+					
+						R <- 1
+						
+						PARA C <- 1 ATE V FACA 
+						
+							R <- R * C 
+						
+						FIMPARA 
+						
+						RETORNE R 
+					
+					FIMFUNCAO 
+			
+			INICIO
+				
+				ESCREVA("DIGITE UM NÚMERO: ")
+				LEIA(N)
+				F <- FATORIAL(N)
+				
+				ESCREVAL("O VALOR DE ", N, "! É IGUAL A ", F)
+				
+			FIMALGORITMO
+			
+			
+			//HOUVE UM ERRO 
+			//FOI OMITIDO O COMANDO "FACA"
+			//DA ESTRUTURA "PARA"
+			
+			
+		
+		PRÁTICA 3.1
+		
+			PASSAGEM DE PARÂMETROS POR REFERÊNCIA 
+			
+				//ATÉ AGORA, HOUVE PASSAGENS DE PARÂMETROS 
+				//POR VALOR
+				
+				//AGORA, EXEMPLIFICAREMOS POR REFERÊNCIAS
+				
+				//ABAIXO, O EXERCÍCIO DA PRATICA 03
+				//DA AULA 12 SERÁ ALTERADO PARA FUNÇÃO
+				
+				//ELE UTILIZOU PASSAGEM DE PARÂMETROS 
+				//POR REFERÊNCIA
+				
+				//ALTERA-SE O COMANDO 
+				//"PROCEDIMENTO" PARA "FUNCAO" 
+				//"FIMPROCEDIMENTO" PARA "FIMFUNCAO"
+				//DECLARA-SE O TIPO DE VARIÁVEL DE RETORNO
+				//APÓS OS PARÊNTESES DA DECLARAÇÃO 
+				//DO TIPO DOS PARÂMETROS
+				//É ADICIONADO UMA VARIÁVEL PARA RECEBER 
+				//O RETORNO DA FUNÇÃO 
+				//RETIRA-SE O COMANDO DE ESCRIDA DA FUNÇÃO 
+				//É ADICIONADO O COMANDO RETORNE 
+				//E, ADICIONADO UM "ESCREVA"
+				//O RETORNO DA FUNÇÃO 
+				
+				
+				
+				ALGORITMO "SEM NOME"
+				
+				VAR 
+					C, T1, T2, T3: INTEIRO
+					
+						FUNCAO PROXIMOFIBONACCI(VAR A, B: INTEIRO): INTEIRO
+						
+						VAR 
+						
+							C: INTEIRO
+						
+						INICIO
+						
+							C := A + B 
+							
+							A := B 
+							B := C 
+							RETORNE C
+						
+						FIMFUNCAO  
+					
+					
+				
+				INICIO
+					T1 <- 0
+					ESCREVAL (T1)
+					T2 <- 1 
+					ESCREVAL (T2)
+					
+						PARA C := 3 ATE 10 FACA 
+						
+							T3 <- PROXIMOFIBONACCI(T1, T2)
+							ESCREVAL(T3)
+							
+						
+						FIMPARA 
+				
+				FIMALGORITMO
+			
+			//HAVIA UM ERRO 
+			//"C" ESTAVA DECLARADA COMO "C1" NAS VARIÁVEIS 
+			
+			//NESTE CASO, COM PASSAGEM DE PARÂMETROS 
+			//POR REFERÊNCIA, 
+			//"T1" & "T2" SÃO ALTERADOS CONFORME 
+			//A EXECUÇÃO DA FUNÇÃO
+			
+			
+2022.01.() - ()
+@()m - SEM INTERVALOS

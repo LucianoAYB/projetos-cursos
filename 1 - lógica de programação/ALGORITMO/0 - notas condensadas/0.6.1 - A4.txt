@@ -1,0 +1,81 @@
+AULA 4:
+
+///////////////////////////////
+1
+ERRADO
+
+algoritmo "semnome"
+// Função :
+// Autor :
+// Data : 12/01/2022
+// Seção de Declarações 
+var
+   L1, L2, L3: REAL
+   EQ, ES: LOGICO
+inicio
+// Seção de Comandos 
+   ESCREVAL("DIGITE O PRIMEIRO LADO: ")
+   LEIA (L1)
+   ESCREVAL("DIGITE O SEGUNDO LADO: ")
+   LEIA (L2)
+   ESCREVAL ("DIGITE O TERCEIRO LADO:")
+   LEIA (L3)
+   EQ <- L1=L2 E L2=L3 E L1=L3
+   ES <- L1<>L2 E L2<>L3 E L1<>L3
+   ESCREVAL ("TEMOS UM EQUILATERO?", EQ)
+   ESCREVAL ("TEMOS UM ESCALENO?", ES)
+   
+fimalgoritmo
+
+///////////////////////////////
+2 - CERTO
+
+// Função :
+// Autor :
+// Data : 12/01/2022
+// Seção de Declarações 
+var
+   L1, L2, L3: REAL
+   EQ, ES: LOGICO
+inicio
+// Seção de Comandos 
+   ESCREVAL("DIGITE O PRIMEIRO LADO: ")
+   LEIA (L1)
+   ESCREVAL("DIGITE O SEGUNDO LADO: ")
+   LEIA (L2)
+   ESCREVAL ("DIGITE O TERCEIRO LADO:")
+   LEIA (L3)
+   EQ <- (L1=L2) E (L2=L3) E (L1=L3)
+   ES <- (L1<>L2) E (L2<>L3) E (L1<>L3)
+   ESCREVAL ("TEMOS UM EQUILATERO?", EQ)
+   ESCREVAL ("TEMOS UM ESCALENO?", ES)
+   
+fimalgoritmo
+
+
+/////////////////////////////////
+3 - FINAL CORRETA
+
+algoritmo "semnome"
+// Função :
+// Autor :
+// Data : 12/01/2022
+// Seção de Declarações 
+var
+   L1, L2, L3: REAL
+   EQ, ES, TRI: LOGICO
+inicio
+// Seção de Comandos 
+   ESCREVAL("DIGITE O PRIMEIRO LADO: ")
+   LEIA (L1)
+   ESCREVAL("DIGITE O SEGUNDO LADO: ")
+   LEIA (L2)
+   ESCREVAL ("DIGITE O TERCEIRO LADO:")
+   LEIA (L3)
+   EQ <- (L1=L3) E (L1=L2) E (L2=L3)
+   ES <- (L1<>L2) E (L2<>L3) E (L1<>L3)
+   TRI <- (L1 < L2+L3) E (L2 < L1+L3) E (L3 < L2+L1)
+   ESCREVAL ("PODE SER UM TRIANGULO?", TRI)
+   ESCREVAL ("TEMOS UM EQUILATERO?", EQ)
+   ESCREVAL ("TEMOS UM ESCALENO?", ES)
+   

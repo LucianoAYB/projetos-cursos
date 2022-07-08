@@ -1,0 +1,52 @@
+2022.01.18 - 1918
+	
+	AULA 07
+		PRATICA 3.1
+		V@11:55
+			CÁLCULO IMC
+		
+		//DESENVOLVA O ALGORITMO, E 
+		//CONFORME AS VARIÁVEIS FOREM SURGINDO
+		//DECLARE-AS
+		
+			ALGORITMO "CALCULOIMC"
+
+			VAR 
+				M, A, IMC: REAL
+
+			INICIO 
+				ESCREVA("MASSA(Kg): ")
+				LEIA (M)
+				ESCREVA("ALTURA (m): ")
+				LEIA (A)
+				IMC <- M / (A)^2
+				ESCREVAL("IMC: ", IMC:5:2)
+
+
+			FIMALGORITMO 
+			
+		
+		PRATICA 3.2
+		
+			ALGORITMO "CALCULOIMC"
+
+			VAR 
+				M, A, IMC: REAL
+
+			INICIO 
+				ESCREVA("MASSA(Kg): ")
+				LEIA (M)
+				ESCREVA("ALTURA (m): ")
+				LEIA (A)
+				IMC <- M / (A)^2
+				ESCREVAL("IMC: ", IMC:5:2)
+				
+				SE (IMC >= 18.5) E (IMC < 25)
+					ESCREVA("PARABÉNS! VOCÊ ESTÁ NO SEU PESO IDEAL")
+				
+				SENAO
+					ESCREVA("VOCÊ NÃO ESTÁ NA FAIXA DE PESO IDEAL")
+				
+				FIMSE
+
+			FIMALGORITMO 

@@ -1,0 +1,144 @@
+AULA 06: 
+1
+
+algoritmo "Creuza01"
+// Função :
+// Autor :
+// Data : 12/01/2022
+// Seção de Declarações 
+var
+   ANO_ATUAL, ANO_NASC, IDADE: INTEIRO
+inicio
+// Seção de Comandos 
+   ESCREVA ("EM QUE ANO ESTAMOS")
+   LEIA (ANO_ATUAL)
+   ESCREVA ("EM QUE ANO NASCI?")
+   LEIA (ANO_NASC)
+   ESCREVA("MINHA IDADE SERA: ", IDADE)
+fimalgoritmo
+
+//////////////////////////////////
+2
+
+
+algoritmo "Creuza01"
+// Função :
+// Autor :
+// Data : 12/01/2022
+// Seção de Declarações 
+var
+   REAIS, DOLARES: REAL
+inicio
+// Seção de Comandos 
+   ESCREVA ("QUANTOS REAIS EU TENHO?")
+           LEIA (REAIS)
+           DOLARES <- REAIS/5.5
+   ESCREVA("POSSO TER: U$", DOLARES)
+fimalgoritmo
+
+
+
+//////////////////////////////////
+3
+
+CONVERSOR ºC PARA FAHRENHEIT 
+
+C=(F-32)/1,8
+
+
+algoritmo "Creuza01"
+// Função :
+// Autor :
+// Data : 12/01/2022
+// Seção de Declarações 
+var
+   F, C: REAL
+inicio
+// Seção de Comandos 
+   ESCREVA ("QUAL É A TEMPERATURA AQUI EM FAHRENHEIT?")
+           LEIA (F)
+           C <- (F-32)/1.8
+   ESCREVA ("NO BRASIL SERIA: ", C, "ºC")
+fimalgoritmo
+
+*****************************
+RECURSO IMPORTANTE
+
+ARREDONDAMENTO PARA CASAS DECIMAIS. 
+x:4:1
+arredondar variável x, em 4 casas decimais, sendo 1 após a vírgula
+*****************************
+
+//////////////////////////
+4- 
+
+CÁLCULO DE IMPOSTOS
+
+algoritmo "semnome"
+var
+      PRECOP, IMPOSTO: REAL
+inicio
+
+      ESCREVAL ("QUAL O PREÇO DO PRODUTO EM U$?")
+      LEIA (PRECOP)
+      IMPOSTO <- PRECOP*0.6
+      ESCREVA ("SERÁ TAXADO UM VALOR ADICIONAL, DE 60%, EQUIVALENTE À: U$", IMPOSTO:5:2)
+
+fimalgoritmo
+
+
+
+/////////////////////////
+
+5 - 
+CÁLCULO DE EMPRÉSTIMO DO BANCO
+
+ELA TERÁ 20% DE JUROS E PODERÁ PARCELAR. 
+
+DIGA: QUANTO QUER PEGAR DE EMPRÉSTIMO
+
+ELA PODERÁ PARCELAR A DÍVIDA
+
+INÍCIO: 
+
+QUAL O VALOR DO EMPRESTIMO
+
+QUANTAS PARCELAS
+
+ESCREVA QUANTAS PARCELAS SERÃO PAGAS, DE QUAL VALOR. 
+
+
+
+
+
+algoritmo "semnome"
+// Função :
+// Autor :
+// Data : 12/01/2022
+// Seção de Declarações
+var
+   VALOR_EMPRESTIMO, PARCELAS, PARCELA: REAL
+inicio
+// Seção de Comandos
+
+   ESCREVAL ("QUAL O VALOR DO EMPRÉSTIMO QUE DESEJA, EM DÓLARES?")
+   LEIA (VALOR_EMPRESTIMO)
+   ESCREVAL ("EM QUANTAS PARCELAS DESEJA DIVIDIR A DÍVIDA?")
+   LEIA (PARCELAS)
+   PARCELA <- VALOR_EMPRESTIMO*1.2/PARCELAS
+   ESCREVAL ("SERÃO PAGAS ", PARCELAS, " PARCELAS DE ", PARCELA, " DÓLARES.")
+
+fimalgoritmo
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,59 @@
+2022.01.(21) - (2114)
+	
+	AULA (11)
+		PRATICA (2.1) 
+		V@(0910)
+			EXIBA OS NÚMEROS PARES
+		
+		//DESENVOLVA O ALGORITMO, E 
+		//CONFORME AS VARIÁVEIS FOREM SURGINDO
+		//DECLARE-AS
+		
+			ALGORITMO "SEM NOME"
+			
+			VAR 
+				CONT: INTEIRO
+			
+			INICIO
+				ESCREVA("DIGITE UM VALOR: ")
+				LEIA(V)
+				
+				PARA CONT <- 0 ATE V PASSO 2 FACA
+				
+					ESCREVAL(CONT)
+				
+				FIMPARA
+				
+			
+			FIMALGORITMO
+		
+		
+		PRATICA 2.2
+			CONTAGEM REGRESSIVA DE NÚMEROS PARES
+			
+			//
+			
+			ALGORITMO "SEM NOME"
+			
+			VAR 
+				CONT: INTEIRO
+			
+			INICIO
+				ESCREVA("DIGITE UM VALOR: ")
+				LEIA(V)
+				
+				SE(V%2 = 1) ENTAO
+					V <- V - 1
+				
+				PARA CONT <- V ATE 0 PASSO -2 FACA
+				
+					ESCREVAL(CONT)
+				
+				FIMPARA
+				
+			
+			FIMALGORITMO
+			
+			
+2022.01.() - ()
+@()m - SEM INTERVALOS

@@ -1,0 +1,85 @@
+2022.01.19 - 1633
+	
+	AULA 08
+		PRATICA 3 
+		V@12:55
+			CRIANÇA ESPERANÇA
+		
+		//DESENVOLVA O ALGORITMO, E 
+		//CONFORME AS VARIÁVEIS FOREM SURGINDO
+		//DECLARE-AS
+			
+			//A ESTRUTURA "ESCOLHA CASO"
+			//AJUDA PARA NÃO PRECISAR ANINHAR MUITAS
+			//ESTRUTURAS CONDICIONAIS ANINHADAS
+			
+			//A ESTRUTURA ESCOLHA É MUITO MAIS SIMPLES QUE ANINHAR
+			//ESTRUTURAS CONDICIONAIS 
+			
+			//PORÉM, HÁ OBSERVAÇÕES
+			//ELA NÃO SERVE PARA TESTAR FAIXAS DE VALORES 
+			//PARA SUA EXECUÇÃO
+		 	//E 
+			//SÓ FUNCIONA PARA VALORES INTEIROS DA VARIÁVEL
+			
+			//NOTA: 
+			//ALGUMAS LINGUAGENS ACEITAM DADOS DO TIPO CARACTERE
+			//PARA O ESCOLHA, O CHAMADO "SWITCH"
+			//NO VISUALG É RECOMENDADO APENAS PARA VALORES INTEIROS 
+			
+			
+			
+			
+			
+		
+			ALGORITMO "CRIANÇAESPERANÇA"
+			
+			VAR 
+			
+			INICIO 
+				ESCREVAL("----------------------------------")
+				ESCREVAL(" C R I A N Ç A E S P E R A N Ç A  ")
+				ESCREVAL("----------------------------------")
+				ESCREVAL("MUITO OBRIGADO POR AJUDAR")
+				ESCREVAL(" [1] PARA DOAR R$10 ")
+				ESCREVAL(" [2] PARA DOAR R$25 ")
+				ESCREVAL(" [3] PARA DOAR R$50 ")
+				ESCREVAL(" [4] PARA DOAR OUTROS VALORES ")
+				ESCREVAL(" [5] PARA CANCELAR ")
+				LEIA (D)
+				
+				ESCOLHA D
+					CASO 1
+						VALOR <- 10
+					CASO 2
+						VALOR <- 25
+					CASO 3
+						VALOR <- 50
+					CASO 4
+						ESCREVA ("QUAL O VALOR DA DOAÇÃO? R$")
+						LEIA (VALOR)
+					CASO 5
+						VALOR <- 0
+						
+				FIM ESCOLHA
+				
+				ESCREVAL("------------------------------")
+				ESCREVAL("SUA DOACAO FOI DE R$", VALOR)
+				ESCREVAL("MUITO OBRIGADO!")
+				ESCREVAL("------------------------------")
+				
+				
+				
+			
+			
+			FIMALGORITMO
+			
+			
+			
+			
+			
+			
+			
+			
+2022.01.19 - 
+@m - SEM INTERVALOS

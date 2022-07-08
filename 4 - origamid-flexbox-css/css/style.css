@@ -1,0 +1,466 @@
+body,h1,h2,p,ul,li,a{
+  margin: 0px;
+  padding: 0px;
+}
+
+body{
+  font-family: "Nunito", helvetica, Arial, Helvetica, sans-serif;
+  color: #222222;
+}
+
+ul{
+  list-style: none;
+}
+
+a{
+  text-decoration: none;
+}
+
+img{
+  display: block;
+  max-width: 100%;
+}
+
+*{
+  box-sizing: border-box;
+}
+
+/* Superinfo */
+
+.superinfo-bg{
+  background: #122ab2;
+  color: white;
+}
+
+.superinfo{
+  display: flex;
+  max-width: 960px;
+  margin: 0 auto;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding-top: 10px;
+}
+
+.superinfo p, .superinfo a{
+  margin: 0 10px 10px 10px;
+}
+
+.superinfo a{
+  color:white;
+}
+
+/* Menu */
+
+.menu-bg{
+  background: #2c70ff;
+
+}
+
+.menu{
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 15px 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menu a{
+  color: white;
+}
+
+.menu-logo a{
+  font-size: 2.25em;
+  font-weight: bold;
+  margin: 0 10px;
+}
+
+.menu-nav ul{
+  display: flex;
+  flex-wrap: wrap;
+
+}
+
+.menu nav a{
+  font-size: 1.25em;
+  display: block;
+  padding: 10px;
+}
+
+.menu nav a:hover{
+  color: #122ab2;
+}
+
+/* aula 3-5, 0900-1230 03:30 210m em v=41m 5.12x */
+
+/* Introdução 3-6 1315-1330 v=11m 15m */
+
+.introducao{
+  font-size: 3em;
+  line-height: 1;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 60px 10px;
+}
+
+/* Sobre 3-6 1400-1428 15m+28m 43m v=9m 5x  */
+
+.sobre{
+  border-top: 2px solid #2c70ff;
+  border-bottom: 2px solid #2c70ff;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 60px 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.sobre-info{
+  flex: 2; /* Faz que o ítem com tal classe ocupe 2x mais espaço que os ítens irmãos.
+
+  No caso há 3 ítens, com este ocupando o dobro da dimensão padrão o tamanho total será aproximadamente 4 ítens, dividindo a págins ao meio com o texto descritivo da classe .sobre-info(classe atribuída) */
+  margin: 0 10px;
+}
+
+.sobre-info h1{
+  font-size: 3em;
+  margin-bottom: .5em;
+}
+
+.sobre-info p{
+  flex: 2 1 300px; /* Define 300px como parâmetro de quebra de conteúdo, o parâmetro segundo (1) define que é possível encolher */
+  font-size: 1.25em;
+  line-height: 1.4;
+  margin-bottom: 1em;
+  color: #7c7c7c;
+}
+
+.sobre-img{
+  flex: 1 1 160px; /* Define 160px como parâmetro de quebra de conteúdo, o parâmetro segundo (1) define que é possível encolher  */
+  margin: 0 10px;
+  
+}
+
+/* Produtos */
+
+.produtos{
+  max-width: 960px;
+  margin: 60px auto;
+}
+
+.produtos h1{
+  font-size: 3em;
+  margin: 0px 10px 60px 10px;
+}
+
+.produtos-container{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+
+}
+
+.produtos-item{
+  flex: 1 1 175px;
+  margin: 10px;
+}
+
+.produtos-item h2{
+  font-size: 3em; 
+  color: #a4a4a4;
+  background: #f7f7f7;
+  padding: 60px 20px;
+}
+
+.purple{
+  border-top: 8px solid #ae81ff;
+}
+
+.pink{
+  border-top: 8px solid #f9265e;
+}
+
+.blue{
+  border-top: 8px solid #66d9eb;
+}
+
+/* Preco */
+
+.preco{
+  background: #f7f7f7;
+  padding: 60px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+}
+
+.preco-item{
+  flex: 1 1 260px;
+  /* 
+  min-width: 260px;
+  
+    1. (dica) min-width < 260~280px
+    (pois é o mínimo que temos de largura mobile)
+    senao
+    haverá scroll horizontal. 
+    2. quando flex-basis=0 o safari não quebra linhas em função da tipografia, min-width se torna necessário. 
+    3. também é possível resolver estas divergências atribuíndo flex-basis e a quebra na propriedade flex.
+  */
+  border: 4px solid white;
+  padding: 20px;
+  margin: 10px;
+}
+
+.preco-item h2{
+  font-size: 3em;
+  color: #a4a4a4;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.preco-item span{
+  max-width: 300px;
+  margin: 20px auto;
+  display: block;
+  font-size: 3em;
+  text-align: center;
+  font-weight: bold;
+  padding: 10px 0 5px 0;
+  border-top: 4px solid white;
+  border-bottom: 4px solid white;
+}
+
+.preco-item sup{
+  font-size: 1.5rem
+}
+
+.preco-item ul{
+  max-width: 300px;
+  margin: 20px auto;
+  font-size: 1.25em; 
+  line-height: 1;
+  font-style: italic;
+  color: #7c7c7c;
+}
+
+.preco-item li{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  /* margin-bottom foi usado no lugar de line-height, devido a quebra de palavras gerar uma distribuição não adequada das palavras */
+}
+
+.preco-item li::after{
+  content:'';
+  display: block;
+  width: 6px;
+  height: 6px;
+  background: #2c70ff;
+  border-radius: 50%;
+}
+
+.preco-item a{
+  max-width: 300px;
+  display: block;
+  margin: 20px auto;
+  border: 4px solid;
+  color: #222222;
+  /* a cor da borda acompanha a cor do texto, caso não atribuída */
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 2.25em;
+  /* 
+    1. Antes, os descritivos ficavam quebrando linhas facilmente. 
+    2. ->O botão COMPRAR com este tamanho impossibilita quebra inferior a seu conteúdo "BENEFÍCIOS", logo, estabiliza o texto. 
+    3. A opção min-width poderia ser utilizada para estabilizar o conteúdo de "BENEFÍCIOS" 
+  */
+  padding: 15px 0;
+  text-align: center;
+}
+
+/* media-query, formatação ativa em função do parâmetro */
+@media (max-width: 800px) {
+  .preco {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  /* até o max-width: 800px; o padding seguirá as propriedades listadas acima */
+
+  /* o atributo numérico abaixo define o filho da propriedade atribuído ao seletor */
+  .preco .preco-item:nth-child(3){
+    order: -2;
+  }
+
+  .preco .preco-item:nth-child(2){
+    order: -1;
+  }
+}
+
+/* Qualidade */
+
+.qualidade{
+  max-width: 960px;
+  margin: 60px auto;
+  overflow: hidden;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/*
+display: flex; 
+torna redundante formatações como as abaixo. 
+
+.qualidade-item{
+  float: left; 
+  width: 33.333%;
+  height: 130px; 
+
+    height (força height - não responsivo ) ou clear-float (numa linha única); pois se não colunas menores em uma linha desnivelarão a distribuição das células */
+
+.qualidade-item{
+  flex: 1 1 300px;
+  /* 300px aproximadamente 1/3 do layout para distribuir as células */
+  margin: 20px 10px;
+}
+
+    /* 33.333% não caberria, dado a margem de 10px, somaria 60px a página, o correto seria:  */
+
+    /* No IE11, calc não funciona no flex-basis, senão */
+
+    /* .qualidade-item{
+      flex: 1 1 calc(33.333% - 20px);
+      margin: 20px 10px;
+    } */
+
+
+.qualidade-item h2{
+  font-size: 2.25em;
+  color: #a4a4a4;
+  margin-bottom: 20px
+}
+
+/* pseudo-element que vem antes, a marquinha */
+.qualidade-item h2:before{
+  content:'';
+  display: inline-block;
+  width: 8px;
+  height: 30px;
+  margin-right: 10px;
+  background: blue;
+}
+
+/* procedimento colorir múltiplas divisões */
+.qualidade-item:nth-of-type(3n+1) h2::before{
+  background: #ae81ff;
+}
+
+.qualidade-item:nth-of-type(3n+2) h2::before{
+  background: #f9265e;
+}
+
+.qualidade-item:nth-of-type(3n+3) h2::before{
+  background: #66d9eb;
+}
+
+/* 3n+1; (3(0)+1)=1º item, representa que o primeiro ítem será selecionado (n=0) e depois ítem (n=1) (3(1)+1)=4º item */
+
+.qualidade-item p{
+  font-size: 1.25em;
+  line-height: 1.4;
+  color: #7c7c7c;
+}
+
+/* Newsletter */
+
+.newsletter{
+  background: #f7f7f7;
+  padding: 60px calc((100% - 960px) /2);
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* distribuição auto para padding não existe, a função acima é adequada */
+
+.newsletter-info{
+  flex: 1 1 240px;
+  margin: 0 10px;
+}
+
+.newsletter-info h1{
+  font-size: 3em;
+  color: #a4a4a4;
+}
+
+.newsletter-info p{
+  font-size: 1.25em;
+  font-style: italic;
+  max-width: 200px;
+  color: #7c7c7c;
+  margin-bottom: 10px;
+}
+
+.newsletter-form{
+  flex: 2 1 260px;
+  /* flex 2, dobra o tamanho comparado à seu irmão, flex 1; */
+
+  /* Se o parâmetro de quebra estiver muito pequeno, inadequado a redução possível do tamanho do display, a quebra não ocorrerá no navegador. EXEMPLO EM AULA 3-10 t -4:45 */
+
+  /* A quebra antes da violação do conteúdo é fundamental, sempre teste displays com tamanhos distintos com tamanho proporcional ao mobile */
+  margin: 0 10px;
+  align-self: center;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.newsletter-form input{
+ flex: 3 1 200px;
+ font-size: 1.25em;
+ color: #7c7c7c;
+ font-style: italic;
+ font-family: "Nunito", helvetica, Arial, Helvetica, sans-serif;
+ border: 4px solid #2c70ff;
+ background: transparent;
+ padding: 15px 10px;
+ margin: 0px;
+ /* alguns navegadores input possui margin por padrão */
+ border-radius: 0px;
+ /* alguns navegadores (mobile comumente) possuem border-radius por padrão */
+}
+
+.newsletter-form button{
+  flex: 1 1 200px;
+  font-family: "Nunito", helvetica, Arial, Helvetica, sans-serif;
+  font-size: 2.25em;
+  font-weight: bold;
+  text-transform: uppercase;
+  background-color: #2c70ff;
+  color: white;
+  margin: 0px; 
+  cursor: pointer;
+  border: 0px;
+  padding: 15px 10px;
+}
+
+@media (max-width: 600px){
+  .newsletter-form button{
+    font-size: 1.5em;
+  }
+}
+
+/* Footer */
+
+.footer{
+  display: flex;
+  height: 200px; 
+  background: #2c70ff;
+  align-items: center;
+}
+
+.footer p{
+  flex: 1;
+  text-align: center;
+  font-size: 2.25em;
+  color: #122ab2
+}

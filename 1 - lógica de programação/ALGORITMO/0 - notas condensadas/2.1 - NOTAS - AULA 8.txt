@@ -1,0 +1,247 @@
+		EX: 1	
+			
+			
+			algoritmo "semnome"
+			// Função :
+			// Autor :
+			// Data : 12/01/2022
+			// Seção de Declarações
+			var
+			   NOTA1, NOTA2, MEDIA_AL: REAL
+			inicio
+			// Seção de Comandos
+			   ESCREVAL ("DIGITE A PRIMEIRA NOTA: ")
+						LEIA (NOTA1)
+			   ESCREVAL ("DIGITE A SEGUNDA NOTA: ")
+						LEIA (NOTA2)
+			   MEDIA_AL <- (NOTA1+NOTA2)/2
+			
+			   SE (MEDIA_AL >= 7) ENTAO
+							ESCREVA ("APROVADO, A MÉDIA FOI: ", MEDIA_AL)
+						SENAO
+							ESCREVA ("REPROVADO, A MÉDIA FOI: ", MEDIA_AL)
+						FIMSE
+			
+			fimalgoritmo
+			
+		EX:2
+		
+		
+						algoritmo "semnome"
+			// Função :
+			// Autor :
+			// Data : 12/01/2022
+			// Seção de Declarações
+			var
+			   MASSA, ALTURA, IMC: REAL
+			inicio
+			// SEÇÃO DE COMANDOS
+			ESCREVAL ("QUAL SUA MASSA (EM Kg)?")
+			LEIA (MASSA)
+			ESCREVAL ("QUAL SUA ALTURA (EM m)?")
+			LEIA (ALTURA)
+			IMC <- MASSA/(ALTURA^2)
+			
+			//ESCREVAL ("SEU IMC É: ", IMC), ARRUMAR PARA ARREDONDAR IMC:5:2 (CÁLCULO EM 5 CASAS, COM 2 DECIMAIS)
+			
+			ESCREVAL ("SEU IMC É: ", IMC:5:2)
+			
+			SE (IMC >= 18.5) E (IMC < 25) ENTAO
+			ESCREVAL ("PARABÉNS, VOCÊ ESTÁ NO SEU PESO IDEAL")
+			SENAO
+			ESCREVAL ("VOCÊ NÃO ESTÁ NA FAIXA DE PESO IDEAL")
+			fimalgoritmo
+
+
+		RESOLUÇÃO EXERCÍCIO 2, COMPLEMENTANDO O ALGORITMO COM CLASSES DE OBESIDADE. 
+					algoritmo "semnome"
+			// Função :
+			// Autor :
+			// Data : 12/01/2022
+			// Seção de Declarações
+			var
+			   MASSA, ALTURA, IMC: REAL
+			inicio
+			// SEÇÃO DE COMANDOS
+			ESCREVAL ("QUAL SUA MASSA (EM Kg)?")
+			LEIA (MASSA)
+			ESCREVAL ("QUAL SUA ALTURA (EM m)?")
+			LEIA (ALTURA)
+			IMC <- MASSA/(ALTURA^2)
+			
+			//ESCREVAL ("SEU IMC É: ", IMC), ARRUMAR PARA ARREDONDAR IMC:5:2 (CÁLCULO EM 5 CASAS, COM 2 DECIMAIS)
+			
+			ESCREVAL ("SEU IMC É: ", IMC:5:2)
+			
+			SE (IMC >= 18.5) E (IMC < 25) ENTAO
+			ESCREVAL ("PARABÉNS, VOCÊ ESTÁ NO SEU PESO IDEAL")
+			SENAO
+			ESCREVAL ("VOCÊ NÃO ESTÁ NA FAIXA DE PESO IDEAL")
+			FIMSE
+			
+			SE (IMC < 17) ENTAO
+			   ESCREVAL("MUITO ABAIXO DO PESO")
+         SENAO
+              SE (IMC>=1) E (IMC<=18.5) entao
+                 ESCREVAL("ABAIXO DO PESO")
+              SENAO
+                   SE (IMC>=18.5) E (IMC<25) ENTAO
+                      ESCREVAL("PESO IDEAL")
+                   SENAO
+                        SE (IMC>=25) E (IMC<30) ENTAO
+                           ESCREVAL("SOBREPESO")
+                        SENAO
+                             SE (IMC>=30) E (IMC<35) ENTAO
+                                ESCREVAL("OBESIDADE")
+                             SENAO
+                                  SE (IMC>=35) E (IMC<40) ENTAO
+                                     ESCREVAL("OBESIDADE SEVERA")
+                                  SENAO
+                                       ESCREVAL("OBESIDADE MORBIDA")
+                                  FIMSE
+                             FIMSE
+                        FIMSE
+                   FIMSE
+              FIMSE
+         FIMSE
+			
+			fimalgoritmo
+			
+			
+			// NOTA: FOI NECESSÁRIO CORRIGIR O ALGORITMO ANTIGO, ELE ESTAVA SEM "FIMSE" NO FINAL. 
+		
+		
+		//
+		
+		VAR: VALOR: INTEIRO
+		// VALOR SÓ PODE SER UM INTEIRO PARA A FUNÇÃO*
+		// NÃO SERVE PARA TESTAR CONDIÇÕES (>, <, >=, <=, <>)
+		//
+		ESCOLHA CASO: 
+		
+		
+			ESCOLHA (VARIAVEL)
+				CASO VALOR
+					"BLOCO A"
+				CASO VALOR
+					"BLOCO B"
+				CASO VALOR
+					"BLOCO C"
+				OUTROCASO
+					"BLOCO D"
+				FIMESCOLHA				
+		//NOTA*: PODE SER ADICIONADO MÚLTIPLOS VALORES, COMO: 
+		// "CASO VALOR_A, VALOR_B, VALOR_C"
+		//SIGNIFICANDO VALOR_A, OU, VALOR_B, OU, VALOR_C.
+		
+		//
+		PRÁTICA 3: 
+		
+		APLICATIVO DE DOAÇÃO. 
+		
+		VAR: 
+		
+		VALOR_ESCOLHA, VALOR_DOADO: INTEIRO
+		
+		INICIO
+			ESCREVAL("------------------------------")
+			ESCREVAL("       CRIANCA ESPERANÇA      ")
+			ESCREVAL("------------------------------")
+			ESCREVAL("   MUITO OBRIGADO POR AJUDAR  ")
+			ESCREVAL(" [1] PARA DOAR R$10 ")
+			ESCREVAL(" [2] PARA DOAR R$25 ")
+			ESCREVAL(" [3] PARA DOAR R$50 ")
+			ESCREVAL(" [4] PARA DOAR OUTROS VALORES ")
+			ESCREVAL(" [5] PARA CANCELAR ")
+			
+			LEIA (VALOR_ESCOLHA)
+			
+			ESCOLHA (VALOR_ESCOLHA)
+				CASO 1
+					VALOR_DOADO <- 10
+				CASO 2
+					VALOR_DOADO <- 25	
+				CASO 3
+					VALOR_DOADO <- 50	
+				CASO 4
+					ESCREVA("QUAL O VALOR DA DOAÇÃO? R$")
+					LEIA (VALOR_DOADO)
+				CASO 5
+					VALOR_DOADO <- 0
+			FIMESCOLHA
+				
+			ESCREVAL ("---------------------------")	
+			ESCREVAL (" SUA DOAÇÃO FOI DE R$: ", VALOR_DOADO)
+			ESCREVAL ("       MUITO OBRIGADO!     ")
+			ESCREVAL ("---------------------------")
+			
+			//FIMALGORIMO
+			
+		//FOI MODIFICADO "ESCREVAL" PARA "ESCREVA" NO LOCAL DE ATRIBUIR DOAÇÃO. 
+
+		V@1649
+		
+		EX3: 
+		DEPENDENTES DO FUNCIONÁRIO
+		
+
+		VAR 
+			NOME: CARACTERE
+			SALARIO_BASE, SALARIO_FINAL: REAL
+			DEPENDENTES: INTEIRO
+		
+		
+		INICIO
+		
+			ESCREVA ("QUAL O NOME DO FUNCIONÁRIO? ")
+			LEIA (NOME)
+			ESCREVA ("QUAL O SALÁRIO DO FUNCIONÁRIO? R$")
+			LEIA (SALARIO_BASE)
+			ESCREVA ("QUAL É A QUANTIDADE DE DEPENDENTES? ")
+			LEIA (DEPENDENTES)
+			
+			ESCOLHA DEPENDENTES
+				CASO 0
+					SALARIO_FINAL <- SALARIO_BASE*1.05
+				CASO 1, 2, 3
+					SALARIO_FINAL <- SALARIO_BASE*1.10
+				CASO 4, 5, 6
+					SALARIO_FINAL <- SALARIO_BASE*1.15
+				OUTROCASO
+					SALARIO_FINAL <- SALARIO_BASE*1.18
+			FIMESCOLHA
+			
+			ESCREVAL ("O NOVO SALÁRIO DE ", NOME, " SERÁ DE R$", SALARIO_FINAL:5:2)
+		
+		// NOTA-SE QUE COLOCAMOS R$ NO ALGORITMO PARA QUE A ENTRADA, O OPERADOR
+		// NÃO SINTA A NECESSIDADE DE DIGITAR A UNIDADE R$. 
+		
+		EXERCÍCIOS PROPOSTOS: 
+		
+		EX.P1: 
+		APROVEITAMENTO DE UM ALUNO
+		
+		ELE É DEFINIDO NO VERBETE "NOTA ESCOLAR", NO WIKIPEDIA
+		
+		HÁ UMA TABELA: 
+		DE 90 A 100, NOTA A
+		DE 80 A 89, NOTA B
+		DE 70 A 79, NOTA C
+		DE 60 A 69, NOTA D
+		DE 50 A 59, NOTA E
+		ABAIXO DE 50, NOTA F
+		
+		UM PROGRAMA QUE CALCULE A MÉDIA DE ACORDO COM 2 NOTAS
+		
+		RESPONDA QUAL É O APROVEITAMENTO. 
+		
+		
+		EX.P2: 
+		
+		ANALISAR UMA PARTIDA DE FUTEBOT. 
+		
+		COMPARE OS GOLS ENTRE 2 TIMES. 
+		DETERMINE A DIFERENÇA ENTRE GOLS. 
+		DIFERENÇA DE 3, PARTIDA NORMAL
+		DIFERENÇA 0, EMPATE
+		DIFERENÇA DE 5 GOLS, UMA GOLEADA. 

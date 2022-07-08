@@ -1,0 +1,33 @@
+ALGORITMO
+https://www.cursoemvideo.com/
+(https://www.cursoemvideo.com/curso/curso-de-algoritmo/aulas/algoritmo/)
+
+10/01/2022 - 13:41
+
+PROFESSOR GUANABARA
+(CURSO EM VIDEO)
+
+PROGRAMAS
+-NOTEPAD++
+-VISUAL STUDIO CODE
+-VISUALG
+
+x = variável caracteres (qualquer coisa escrita)
+
+COMANDO DE SAÍDA
+  ESCREVA ("x") 
+
+Comandos ESCREVA, concatena as mensagens. 
+
+ ESCREVAL ("x")
+
+Comandos ESCREVAL, pula uma linha
+
+
+CAMELCASE PARA VARIÁVEIS
+
+LucianoAkiraYamamotoBachega
+
+
+Escreva ("x", x)
+(CONCATENA MENSAGENS)

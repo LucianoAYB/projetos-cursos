@@ -1,0 +1,69 @@
+2022.01.(19) - (1758)
+	
+	AULA (9)
+		PRATICA (4.1) 
+		V@(1700)
+			LEIA 10 NÚMEROS E SOME-OS
+		
+		//DESENVOLVA O ALGORITMO, E 
+		//CONFORME AS VARIÁVEIS FOREM SURGINDO
+		//DECLARE-AS
+		
+			ALGORITMO 
+			
+			VAR 
+				CONT, N: INTEIRO
+				
+			INICIO 
+				CONT <- 1
+				ENQUANTO (CONT <= 10) FACA
+					ESCREVA("DIGITE O ", CONT, "º VALOR: ")
+					LEIA (N)
+					
+					S <- S+N
+					CONT <- CONT+1
+				
+				FIMENQUANTO
+				
+				ESCREVA("A SOMA DE TODOS OS VALORES FOI: ", S)
+			
+			FIMALGORITMO
+			
+			
+			
+		PRATICA 4.2
+		V@(2108)
+			LEIA 10 NÚMEROS E SOME-OS
+			E MOSTRE QUAL FOI O MAIOR NÚMERO DIGITADO
+
+			ALGORITMO ""
+				
+			VAR 
+				CONT, N, MAIOR, S: INTEIRO
+				
+			INICIO 
+				CONT <- 1
+				ENQUANTO (CONT <= 10) FACA
+					ESCREVA("DIGITE O ", CONT, "º VALOR: ")
+					LEIA (N)
+					
+					SE (N > MAIOR) ENTAO
+						MAIOR <- N 
+					FIMSE
+					
+					
+					S <- S+N
+					CONT <- CONT+1
+				
+				FIMENQUANTO
+				
+				ESCREVA("A SOMA DE TODOS OS VALORES FOI: ", S)
+				ESCREVA("O MAIOR VALOR DIGITADO FOI: ", MAIOR)
+			
+			FIMALGORITMO
+		
+		//HOUVE ERRO, FALTOU DECLARAR A VARIÁVEL
+		
+		
+2022.01.(19) - ()
+@()m - SEM INTERVALOS

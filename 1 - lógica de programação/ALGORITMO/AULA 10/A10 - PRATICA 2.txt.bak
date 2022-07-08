@@ -1,0 +1,48 @@
+2022.01.(20) - (2118)
+	
+	AULA (10)
+		PRATICA (2) 
+		V@(1212)
+			QUANTOS NÚMEROS SÃO NEGATIVOS?
+		
+		//DESENVOLVA O ALGORITMO, E 
+		//CONFORME AS VARIÁVEIS FOREM SURGINDO
+		//DECLARE-AS
+		
+			ALGORITMO "CONTANEGATIVO"
+			
+			VAR 
+				N, C, TOTALNEGATIVOS: INTEIRO
+				
+			INICIO 
+				
+				C <- 1
+				
+				TOTALNEGATIVOS <- 0
+				
+				REPITA
+					
+					ESCREVA("DIGITE UM NÚMERO: ")
+					LEIA (N)
+					
+					SE (N<0) ENTAO
+						TOTALNEGATIVOS <- TOTALNEGATIVOS +1
+					FIMSE
+					
+					C <- C + 1
+					
+				ATE (C > 5)
+				
+				ESCREVAL("FORAM DIGITADOS ", TOTALNEGATIVOS, " VALORES NEGATIVOS.")
+				
+			FIMALGORITMO
+			
+			
+			
+			
+			
+			
+			
+			
+2022.01.(20) - ()
+@()m - SEM INTERVALOS

@@ -1,0 +1,103 @@
+2022.01.(21) - (1728)
+	
+	AULA (10)
+		PRATICA (4) 
+		V@(2005)
+			VERIFICAR SE UM NÚMERO É OU NÃO PRIMO
+		
+		//DESENVOLVA O ALGORITMO, E 
+		//CONFORME AS VARIÁVEIS FOREM SURGINDO
+		//DECLARE-AS
+		
+		//OS NÚMEROS PRIMOS SÃO NÚMEROS DIVISÍVEIS POR 1 E POR ELE MESMO
+		//COMO DEVE SER FEITO O TESTE PARA CADA NÚMERO, 
+		//ATÉ O NÚMERO SOB TESTE
+		//INICIA-SE POR UM ALGORITMO DE CONTAGEM
+		//QUE SERÁ ADAPTADO CONFORME NECESSÁRIO
+		
+		
+			ALGORITMO "NUMEROPRIMO"
+			
+			VAR 
+				
+				C, N: INTEIRO
+			
+			INICIO
+				
+				C <- 1
+				REPITA
+					
+					ESCREVA(C)
+					
+					C <- C+1
+					
+				ATE (C>N)
+			
+			FIMALGORITMO
+			
+
+		
+		
+		PRATICA 4.1
+			
+			
+			//O ALGORITMO CONTARÁ O NÚMERO DE DIVISORES
+			//CHECANDO O RESTO DA DIVISÃO
+			
+			//CASO SEJA APENAS 2 (O PRÓPRIO NÚMERO, E 1)
+			//SERÁ PRIMO
+			
+			ALGORITMO "NUMEROPRIMO"
+			
+			VAR 
+				
+				C, N, CONTDIV: INTEIRO
+			
+			INICIO
+				
+				C <- 1
+				CONTDIV <- 0
+				
+				ESCREVA ("DIGITE UM NÚMERO: ")
+				LEIA (N)
+				
+					REPITA
+						
+						ESCREVA(C)
+						
+						SE (N % C = 0) ENTAO
+							
+							CONTDIV <- CONTDIV+1
+							
+						FIMSE
+						
+						C <- C+1
+						
+					ATE (C>N)
+				
+				ESCREVAL("AO TODO EXISTEM ", CONTDIV, " VALORES DIVISÍVEIS. ")
+				
+					SE (CONTDIV > 2) ENTAO 
+						ESCREVAL ("O VALOR ", N, " NÃO É PRIMO.")
+					SENAO
+						ESCREVAL("O VALOR ", N, " É PRIMO.")
+					FIMSE
+				
+				
+			
+			FIMALGORITMO
+			
+			//HOUVE UM ERRO, TINHA ESQUECIDO
+			//DE DECLARAR CONTDIV
+			//FALTOU O COMANDO "LEIA(C)"
+			//FALTOU "DIGITE O NÚMERO, LEIA N"
+			//FALTOU UMA "ASPAS" NO DIGITE UM NÚMERO
+			//HOUVE ERROS DE DIGITAÇÃO NA VARIÁVEL "CONTDIV"
+			//HOUVE UM "LEIA" EM POSIÇÃO ERRADA"
+			
+			//HOUVE UM ERRO NO COMANDO DE ATRIBUIÇÃO
+			//AO INVÉS DE "<-" USEI "="
+			
+			
+2022.01.() - ()
+@()m - SEM INTERVALOS

@@ -1,0 +1,91 @@
+2022.01.(22) - (1606)
+
+	AULA (14)
+		VETORES
+		V@0221
+		
+			VARIÁVEIS COMPOSTAS HOMOGÊNEAS UNIDIMENSIONAIS 
+			
+				//ELAS EXISTEM EM PARALELO 
+				//AS VARIÁVEIS SIMPLES
+				
+				//SÃO DECLARADAS E UTILIZADAS DE FORMA DIFERENTE 
+				//NO ALGORITMO PRINCIPAL
+				
+				//OS COMANDOS PARA DECLARÁ-LO EM "VAR" SÃO: 
+				// "<VAR>: VETOR [ <1> .. <LIMITE DE Nº DE VARIÁVEIS> ] DE <TIPO>
+				//AS ENTRADAS ENTÃO ENTRE "<>"
+				
+				//OS COMANDO PARA ATRIBUÍR VALORES, E USÁ-LOS: 
+				// "<VAR1> [ <ÍNDICE DA VARIÁVEL (ATÉ LIMITE)> ] <- <VALOR> "
+				
+				//SÃO CHAMADAS DE HOMOGÊNEAS POIS TODAS AS VARIÁVEIS 
+				//DECLARADAS COMO UM VETOR, 
+				//SÃO DO MESMO TIPO EX: "INTEIRO"
+				
+				//CHAMADAS DE UNIDIMENSIONAIS, POIS 
+				//PARA NOMEAR UMA VARIÁVEL NO VETOR 
+				//BASTA 1 ÍNDICE, ENTRA O INÍCIO <1> E O 
+				//<LIMITE  DE Nº DE VARIÁVEIS>
+				
+				
+				//UMA FORMA BACANA DE ATRIBUIR VALORES 
+				//DE ENTRADA A VETORES É MOSTRADA ABAIXO 
+				
+				EXEMPLO: 
+				
+				
+				ALGORITMO "SEM NOME"
+				
+				VAR 
+					N1, N2, N3, N4, I: INTEIRO
+					
+					N: VETOR[1..4] DE INTEIRO 
+					
+					
+				
+				INICIO 
+					
+					N1 <- 11
+					N2 <- 12
+					N3 <- 13
+					N4 <- 14
+					
+					
+					N[1] <- 3
+					N[2] <- 5
+					N[3] <- 1
+					N[4] <- 0
+					//ESTES SÃO VETORES
+					
+					PARA I <- 1 ATE 4 FACA 
+						LEIA(N [I])
+					FIMPARA
+					
+				
+				FIMALGORITMO
+			
+			
+				EXEMPLO 2: 
+				
+				ALGORITMO "SEMNOME" 
+				
+				VAR 
+				
+					V: VETOR[1..6] DE INTEIRO 
+					C: INTEIRO 
+					
+				INICIO 
+				
+					PARA C <- 1 ATE 6 FACA 
+						ESCREVA("DIGITE O ", C, "º VALOR: ")
+						LEIA(V[C])
+					FIMPARA 
+					
+					PARA C <- 1 ATE 6 FACA 
+						ESCREVA ("{", V[C], "}")
+					FIMPARA 
+			
+
+2022.01.() - ()
+@()m - SEM INTERVALOS

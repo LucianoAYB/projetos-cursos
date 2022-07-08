@@ -1,0 +1,183 @@
+2022.01.(21) - (2015)
+	
+	AULA (11)
+		PRATICA (1) 
+		V@(0450)
+			CONTAR DE 1 ATÉ 10
+			//ESTRUTURA DE REPETIÇÃO
+			//"PARA"
+		
+		//DESENVOLVA O ALGORITMO, E 
+		//CONFORME AS VARIÁVEIS FOREM SURGINDO
+		//DECLARE-AS
+		
+			ALGORITMO "SEM NOME"
+			
+			VAR 
+				C: INTEIRO
+			
+			INICIO
+				PARA C <- 1 ATE 10 FACA
+					ESCREVAL(C)
+				FIMPARA
+			
+			FIMALGORITMO
+		
+		
+		
+		
+		PRATICA 1.2
+			//CONTAR DE 10 ATÉ 1
+			
+			ALGORITMO "SEM NOME"
+			
+			VAR 
+				C: INTEIRO
+			
+			INICIO
+				PARA C <- 10 ATE 1 PASSO -1 FACA
+					ESCREVAL(C)
+				FIMPARA
+			
+			FIMALGORITMO
+		
+		
+		
+		PRATICA 1.3
+		
+			PRATICA 1.3.1
+			
+				SOMADOR DE VALORES
+
+
+
+
+				ALGORITMO "SEM NOME"
+				
+				VAR 
+					N, C, S: INTEIRO
+				
+				INICIO
+					
+					C <- 1
+					S <- 0
+					
+						ENQUANTO (C <= 5) FACA
+						
+							ESCREVAL("DIGITE UM VALOR: ")
+							LEIA(N)
+							S <- S+N
+							C <- C+1 
+							
+						FIMENQUANTO
+						
+						ESCREVAL("A SOMA DOS VALORES É ", S, ". ")
+							
+				
+				FIMALGORITMO
+				
+				
+				
+				
+				
+			PRATICA 1.3.2
+				
+				//ALTERANDO PARA SOMADOR COM ESTRUTURA "PARA"
+				
+				
+				
+				ALGORITMO "SEM NOME"
+				
+				VAR 
+					N, C, S: INTEIRO
+				
+				INICIO
+					
+					S <- 0
+					
+						PARA C <= 1 ATE 5 FACA
+						
+							ESCREVAL("DIGITE UM VALOR: ")
+							LEIA(N)
+							S <- S+N
+							
+						FIMPARA
+						
+						ESCREVAL("A SOMA DOS VALORES É ", S, ". ")
+							
+				
+				FIMALGORITMO
+			
+			
+			
+			PRATICA 1.4
+			
+				PRATICA 1.4.1
+				
+				
+					//A ESTRUTURA "PARA" NÃO É UTILIZÁVEL
+					//PARA TODAS AS SITUAÇÕES
+					//POR EXEMPLO
+					
+					
+				ALGORITMO "SOMADOR"
+				
+				VAR 
+					N, S, RESP: INTEIRO
+				
+				INICIO
+					
+					S <- 0
+					
+						REPITA
+							
+							ESCREVA("DIGITE UM VALOR: ")
+							LEIA (N)
+							
+							S <- S + N 
+							
+							ESCREVA("QUER CONTINUAR? [S/N]")
+							LEIA (RESP)
+							
+						ATE (RESP="N")
+				
+				FIMALGORITMO
+			
+			
+			
+			
+				PRATICA 1.4.2
+				
+				//NO CASO SE NÃO SABER EXATAMENTE O NÚMERO DE REPETIÇÕES
+				//A ESTRUTURA PARA NÃO FUNCIONA
+				//NESTE CASO, O NÚMERO DE REPETIÇÕES
+				//É INSERIDO PELO USUÁRIO
+				
+				ALGORITMO "SOMADOR ESTRUTURA PARA"
+				
+				VAR 
+					N, S, RESP: INTEIRO
+				
+				INICIO
+					
+					S <- 0
+					
+						REPITA
+							
+							ESCREVA("DIGITE UM VALOR: ")
+							LEIA (N)
+							
+							S <- S + N 
+							
+							ESCREVA("QUER CONTINUAR? [S/N]")
+							LEIA (RESP)
+							
+						ATE (RESP="N")
+				
+				FIMALGORITMO
+				
+			
+		
+		
+2022.01.(21) - (2112)
+@()m - SEM INTERVALOS

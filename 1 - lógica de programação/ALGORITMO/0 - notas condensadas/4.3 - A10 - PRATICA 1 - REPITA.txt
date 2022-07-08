@@ -1,0 +1,66 @@
+2022.01.(20) - (2055)
+	
+	AULA (10)
+		PRATICA (1) 
+		V@(0830)
+			CONTAR ATÉ 10
+		
+		//DESENVOLVA O ALGORITMO, E 
+		//CONFORME AS VARIÁVEIS FOREM SURGINDO
+		//DECLARE-AS
+		
+			//A ESTRUTURA REPITA É ÚTIL PARA REPETIÇÕES
+			//CUJO TESTE LÓGICO SEJA FEITO
+			//APÓS SUA EXECUÇÃO
+			
+			ALGORITMO "CONTEDE1A10"
+			
+			VAR 
+				CONT: INTEIRO 
+				
+			INICIO 
+				CONT <- 1
+				
+				REPITA 
+					
+					ESCREVAL(CONT)					
+					CONT <- CONT+1
+				
+				ATE (CONT > 10)
+			
+			FIMALGORITMO
+			
+			
+		
+		PRATICA 1.1
+		V@1012
+			EXIBIR A TABUADA DE UM NÚMERO QUALQUER
+			
+			
+			
+			ALGORITMO "CONTEDE1A10"
+			
+			VAR 
+				CONT, N: INTEIRO 
+				
+			INICIO 
+				CONT <- 1
+				ESCREVA("QUER VER A TABUADA DE QUAL NÚMERO? ")
+				LEIA (N)
+				
+				REPITA 
+					
+					ESCREVAL(N, " X ", CONT, " = ", N * CONT)
+					CONT <- CONT+1
+				
+				ATE (CONT > 10)
+			
+			FIMALGORITMO
+
+
+
+
+		
+			
+2022.01.(20) - (2118)
+@(23)m - SEM INTERVALOS

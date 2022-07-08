@@ -1,0 +1,93 @@
+2022.01.(22) - (0008)
+	
+	AULA (12)
+		PRATICA (3.1) 
+		V@(2715)
+			SEQUÊNCIA DE FIBONACCI
+		
+		//DESENVOLVA O ALGORITMO, E 
+		//CONFORME AS VARIÁVEIS FOREM SURGINDO
+		//DECLARE-AS
+		
+		//O ALGORITMO ABAIXO SERÁ TRANSFORMADO 
+		//EM UM PROCEDIMENTO 
+		
+			ALGORITMO "SEM NOME"
+			
+			VAR 
+				C, T1, T2, T3: INTEIRO
+			
+			INICIO
+				T1 <- 0
+				ESCREVA (T1)
+				T2 <- 1 
+				ESCREVA (T2)
+				
+					PARA C := 1 ATE 13 FACA 
+					
+						T3 := T1 + T2 
+							ESCREVA (T3)
+						
+						T1 := T2 
+						T2 := T3 
+						
+					
+					FIMPARA 
+			
+			FIMALGORITMO
+			
+			
+			
+		PRATICA 3.2
+		
+			//COM PROCEDIMENTOS
+			
+			//NO CASO HAVERÁ DUAS VARIÁVEIS "C"
+			//UMA "ESCOPO GLOBAL" 
+			//OUTRA "ESCOPO LOCAL" 
+			
+			
+			ALGORITMO "SEM NOME"
+			
+			VAR 
+				C1, T1, T2, T3: INTEIRO
+				
+					PROCEDIMENTO PROXIMOFIBONACCI(VAR A, B: INTEIRO)
+					
+					VAR 
+					C: INTEIRO
+					
+					
+					INICIO
+					
+						C := A + B 
+							ESCREVA (C)
+						
+						A := B 
+						B := C 
+					
+					FIMPROCEDIMENTO 
+				
+				
+			
+			INICIO
+				T1 <- 0
+				ESCREVA (T1)
+				T2 <- 1 
+				ESCREVA (T2)
+				
+					PARA C := 3 ATE 10 FACA 
+					
+							PROXIMOFIBONACCI(T1, T2)
+					
+					FIMPARA 
+			
+			FIMALGORITMO
+			
+			//HAVIA UM ERRO 
+			//"C" ESTAVA DECLARADA COMO "C1" NAS VARIÁVEIS 
+			
+			
+			
+2022.01.(22) - (0019)
+@(11)m - SEM INTERVALOS

@@ -1,0 +1,165 @@
+2022.01.21 - 23:58
+
+	AULA 12
+		V@1610
+		
+			DEFINIÇÃO: 
+			
+				ESCOPO: 
+					//LOCAL ONDE UMA DETERMINADA VARIÁVEL
+					//SERÁ OPERADA
+					
+					EXEMPLO: 
+					//UM PROGRAMA POSSUI UM PROCEDIMENTO
+					//TAL PROCEDIMENTO POSSUI 
+					//PARÂMETROS, "A" & "B"
+					//E 
+					//DENTRO DO PARÂMETRO, 
+					//VARIÁVEIS DECLARADAS "X" & "Y"
+					
+					
+					//E, 
+					//VARIÁVEIS, NO ALGORITMO
+					//"N1" & "N2"
+					
+					//AO EXECUTAR O PROGRAMA, 
+					//N1 E N2, SERÃO DECLARADAS
+					//E UTILIZADAS
+					//EM TODO PROGRAMA 
+					//NO CASO, CLASSIFICADAS COMO 
+					//VARIÁVEIS DE: 
+					
+					
+						//"ESCOPO GLOBAL"
+					
+					
+					//NO CASO, OS PARÂMETROS 
+					//"A" & "B" DA ROTINA 
+					//E 
+					//VARIÁVEIS DENTRO DA ROTINA 
+					//"X" & "Y"
+					//COMO ESTAS SERÃO UTILIZADAS 
+					//NA ROTINA
+					//AS CLASSIFICAMOS COMO 
+					//VARIÁVEIS DE: 
+					
+					
+						//"ESCOPO LOCAL"
+					
+					
+				//NOTA: 
+					//VARIÁVEIS DE "ESCOPO GLOBAL", 
+					//PODEM SER UTILIZADAS, DENTRO DE PROCEDIMENTOS 
+					
+					//PORÉM 
+					
+					//PARÂMETROS & VARIÁVEIS DE "ESCOPO LOCAL"
+					//NÃO PODEM SER UTILIZADAS 
+					//FORA DO PROCEDIMENTO, 
+					//FORA DO "ESCOPO LOCAL", DO PROCEDIMENTO
+					
+
+
+ 
+			V@2110
+			
+			
+			
+			PASSAGEM DE PARÂMETRO [2/2]: 	
+				
+				PASSAGEM DE PARÂMETRO POR REFERÊNCIA
+				
+				EXEMPLO 1 (PASSAGEM DE PARÂMETROS POR VALOR): 
+					
+					//NESTE CASO, 
+					//HÁ A PASSAGEM DE PARÂMETROS POR VALOR 
+					//"X" & "Y" MANTÉM OS VALORES 
+					//DECLARADOS INICIALMENTE
+					
+					ALGORITMO "SEM NOME"
+					
+					VAR 
+					
+						X, Y: INTEIRO
+					
+							PROCEDIMENTO SOMA (A, B: INTEIRO)
+							
+							INICIO
+							
+								A <- A + 1
+								B <- B + 2 
+								ESCREVAL("VALOR DE A = ", A)
+								ESCREVAL("VALOR DE B = ", B)
+								ESCREVAL("SOMA A + B = ", A+B)
+							
+							FIMPROCEDIMENTO
+					
+					INICIO 
+					
+						X <- 4
+						Y <- 8
+						SOMA (X, Y) 
+						ESCREVAL("VALOR DE X = ", X)
+						ESCREVAL("VALOR DE Y = ", Y)
+						
+					FIMALGORITMO
+					
+					//NESTE CASO, "X" & "Y" 
+					//NÃO SERÃO MODIFICADAS
+					//PELO PROCEDIMENTO
+				
+				
+				
+				EXEMPLO 2 (PASSAGEM DE PARÂMETRO POR REFERÊNCIA): 
+					
+					//NESTE CASO, SERÁ ADICIONADO O COMANDO 
+					//"VAR", ANTES DA DECLARAÇÃO DE PARÂMETROS 
+					//DO PROCEDIMENTO 
+					
+					//ALTERANDO O ALGORITMO DO PROCEDIMENTO 
+					//"A" & "B" DE SIMPLES 
+					//CÓPIAS DE "X" & "Y"
+					//E EXECUÇÕES EM "ESCOPO LOCAL" 
+					
+					//PARA UM PROCEDIMENTO QUE ALTERA
+					//AS VARIÁVEIS DE "ESCOPO GLOCAL"
+					//UTILIZADAS PARA 
+					//EXECUTAR PROCEDIMENTO 
+					
+					
+					
+					ALGORITMO "SEM NOME"
+					
+					VAR 
+					
+						X, Y: INTEIRO
+					
+							PROCEDIMENTO SOMA (VAR A, B: INTEIRO)
+							
+							INICIO
+							
+								A <- A + 1
+								B <- B + 2 
+								ESCREVAL("VALOR DE A = ", A)
+								ESCREVAL("VALOR DE B = ", B)
+								ESCREVAL("SOMA A + B = ", A+B)
+							
+							FIMPROCEDIMENTO
+					
+					INICIO 
+					
+						X <- 4
+						Y <- 8
+						SOMA (X, Y) 
+						ESCREVAL("VALOR DE X = ", X)
+						ESCREVAL("VALOR DE Y = ", Y)
+						
+					FIMALGORITMO
+					
+					//NESTE CASO, "X" & "Y" SERÃO MODIFICADAS 
+					//PELO PROCEDIMENTO 
+					
+			V@2715
+
+2022.01.(22) - (0015)
+@(17)m - SEM INTERVALOS

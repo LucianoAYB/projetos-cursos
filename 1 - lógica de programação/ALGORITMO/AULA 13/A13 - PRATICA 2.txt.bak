@@ -1,0 +1,48 @@
+2022.01.(22) - (0051)
+	
+	AULA (13)
+		PRATICA (2) 
+		V@(1010)
+			VERIFICADOR PAR/ÍMPAR
+		
+		//DESENVOLVA O ALGORITMO, E 
+		//CONFORME AS VARIÁVEIS
+		//PROCEDIMENTOS E FUNÇÕES 
+		//FOREM SURGINDO 
+		//DECLARE-AS 
+		
+			ALGORITMO "SEM NOME"
+			
+			VAR 
+				N: INTEIRO
+				R: CARACTERE
+				
+					FUNCAO PAROUIMPAR(V: INTEIRO): CARACTERE 
+					
+					INICIO 
+					
+						SE (V%2 = 0) ENTAO
+							RETORNE "PAR"
+						SENAO 
+							RETORNE "ÍMPAR"
+						FIMSE 
+					
+					FIMFUNCAO
+			
+			INICIO
+				
+				ESCREVA("DIGITE UM NÚMERO: ")
+				LEIA(N)
+				
+				R <- PAROUIMPAR(N)
+				ESCREVA("O NÚMERO ", N, " É UM VALOR ", R)
+			
+			FIMALGORITMO
+			
+			
+			//HOUVE UM ERRO 
+			//ESQUECI DE ADICIONAR "ENTAO"
+			
+			V@1414
+2022.01.(22) - (0058)
+@(7)m - SEM INTERVALOS

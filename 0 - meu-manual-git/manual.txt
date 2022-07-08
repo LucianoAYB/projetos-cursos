@@ -1,0 +1,1811 @@
+	1 { GIT & GITHUB: CONTROLE E COMPARTILHE SEU CÓDIGO - T = 11h08m 
+	
+		ÍNDICE { 
+		
+			AULA 1 
+				1. O GIT É APRESENTADO COMO FERRAMENTA PARA CONTROLAR EDIÇÕES & COMPARTILHAR 
+				UMA PASTA CHAMADA DE "REPOSITÓRIO" PARA TRABALHO EM EQUIPE 
+			
+				2. COMO INICIAR UM REPOSITÓRIO 
+				3. COMO CONFIGURAR NOME DO USUÁRIO & E-MAIL PARA REGISTRO 
+					DE EDIÇÕES 
+				
+			AULA 2 
+				1. COMPROMETER ALTERAÇÕES NO REGISTRO  
+				2. VISUALIZAR RELATÓRIO DE ALTERAÇÕES 
+				3. PARA CONFIGURAÇÕES AVANÇADAS NO git, FONTE: 
+					https://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration.
+				4. IGNORANDO ARQUIVOS 
+				
+			AULA 3 
+				1. INICIAR REPOSITÓRIOS REMOTOS (SERVIDORES) 
+				2. LINKAR REPOSITÓRIOS REMOTOS 
+				3. EXPORTAR DADOS PARA REPOSITÓRIOS REMOTOS 
+				4. IMPORTAR DADOS DE REPOSITÓRIOS REMOTOS 
+				5. CRIAR REPOSITÓRIOS REMOTOS ONLINE 
+					http://github.com/
+					
+			AULA 4 
+				1. UNIR TRABALHOS 
+					
+					merge: 
+						EXECUTA UM commit (registro) DE UNIÃO ENTRE LINHAS DE DESENVOLVIMENTO 
+						DA BRANCH ATRIBUÍDA COM A ATUAL  
+						
+					rebase: 
+						EXPORTA OS COMMITS DA BRANCH ATUAL 
+						POSICIONANDO-OS EM SÉRIE APÓS OS COMMITS 
+						DA BRANCH ATRIBUÍDA 
+				
+				2. CORRIGINDO DIVERGÊNCIAS 
+					CASO ALTERAÇÕES SEJAM FEITAS MÚTUAMENTE NAS MESMAS LINHAS
+					GERARÁ UMA DIVERGÊNCIA AO UNIR LINHAS DE TRABALHO 
+					TAIS DIVERGÊNCIAS DEVEM SER RETIFICADAS, E COMPROMETIDAS NO REGISTRO 
+				
+			AULA 5 
+				1. COMO DESFAZER ALTERAÇÕES NOS MAIS DIVERSOS NÍVEIS DE COMPROMETIMENTOS 
+				(SAVES) EXECUTADOS. (git checkout // git reset head // git revert)
+				
+				2. COMO SALVAR TEMPORARIAMENTE UMA ALTERAÇÃO, RETORNAR À VERSÃO ATUAL 
+				E POSTERIORMENTE, UNIR SUA ALTERAÇÃO À VERSÃO VIGENTE (git stash)
+				
+				3. COMO VISUALIZAR ESTADOS ANTERIORES COMPROMETIDOS, 
+				E INICIAR NOVAS LINHAS DE DESENVOLVIMENTO (branches), 
+				BASEADAS EM TAIS ESTADOS ANTERIORES
+				
+			AULA 6 
+				1. EXIBIR DIFERENÇAS ENTRE DIFERENTES COMPROMETIMENTOS DO REGISTRO 
+				ATRAVÉS DO HASH DO (git commit) 
+				
+				2. ADICIONAR TAGs (RELEASE) NO ESTADO ATUAL DO REGISTRO 
+				ANALOGO À ENTREGA DE UMA VERSÃO 
+				QUE PODE FICAR DISPONÍVEL PARA DOWNLOAD NO http://github.com 
+		
+		}
+	
+			1 { O QUE É O GIT? ~14min - 6x 
+				I DOCUMENTAÇÃO - @2022.02.20 - 1230 {
+				
+					I TEORIA @2022.02.20 - 1230 {
+					
+						GIT É UM SISTEMA DE CONTROLE DE VERSÕES 
+							VCS - VERSION CONTROL SYSTEM 
+							
+						ALTERNATIVAS AO GIT: 
+							CVS, SNV, MERCURIAL
+						
+						REPOSITÓRIO: PASTA DE TRABALHO 
+						
+						O GIT PERMITE A EXISTÊNCIA DISTRIBUÍDA DE TAL PASTA 
+						ENTRE MÚLTIPLOS USUÁRIOS. 
+						TAMBÉM CONTROLA AS ALTERAÇÕES PARA EVITAR CONFLITOS 
+						ENTRE EDIÇÕES 
+						
+						
+						1 { EXERCÍCIO: 
+						
+							Agora que nós já entendemos para que serve um VCS (Version Control System), 
+							ou sistema de controle de versões, podemos dar continuidade com este treinamento, 
+							mas só para garantir...
+
+							Quais das afirmações a seguir sobre o Git estão corretas?
+						
+								1 - Funciona apenas quando estivermos online
+								
+								2 - Nos deixa organizar o trabalho em equipe, mantendo as alterações 
+								nos arquivos em um servidor específico para isso
+								
+								3 - Permite armazenamento e acesso a um histórico de modificações
+								
+							R: 2
+							Alternativa correta! O Git permite que a gente armazene as modificações feitas em 
+							cada arquivo em um servidor próprio para isso. Toda a gestão de alterações é feita pelo 
+							Git e nós só precisamos nos preocupar em criar código que funciona, e não em quem alterou o que antes.
+							
+						}
+						
+						APÓS INSTALADO, 
+						
+						O APLICATIVO "GIT BASH" SERÁ O APP DE ENTRADA DE COMANDOS 
+						O PROMPT DE COMANDO TAMBÉM DEVE FUNCIONAR. 
+						
+
+						2 { EXERCÍCIO: 
+						
+							Já entendemos o motivo para utilizar o Git. Começamos também a 
+							entender como o Git funciona. Sabemos que o Git faz a gestão de 
+							repositórios, e cada pessoa na equipe pode ter o seu repositório.
+							
+							Como fazemos para o Git passar a enxergar determinada pasta como 
+							um repositório e a observar as mudanças em seus arquivos?
+							
+								1 - Através do comando git init
+							
+								2 - Através do comando git repository init
+							
+								3 - Através do comando git init-repository
+							R: 1
+							Alternativa correta! O git init inicializa um repositório no 
+							diretório em que o comando for executado. A partir deste comando, 
+							o Git poderá gerenciar as modificações realizadas nos arquivos.
+						
+						}
+						
+						
+						3 { PRÁTICA: 
+						
+
+							
+							CRIE UMA PASTA, E SALVE UM ARQUIVO NOMEADO 
+								"index.html"
+							COM O SEGUINTE TEXTO: {
+								<!DOCTYPE html>
+								<html lang="en">
+								<head>
+									<meta charset="UTF-8">
+									<title>Cursos da Alura</title>
+								</head>
+								<body>
+									<ul>
+										<li>Vagrant</li>
+										<li>Docker</li>
+										<li>Ansible</li>
+										<li>Integração Continua</li>
+									</ul>
+								</body>
+								</html>	
+							}
+							
+							NO TERMINAL (GIT BASH), ATRIBUA A PASTA CRIADA 
+							COM O COMANDO: 
+								cd "{ENDEREÇO.PASTA}"
+									ENTRA NA PASTA PARA ATRIBUIR COMANDOS
+							NOTA {
+							Caso o caminho da sua pasta possua espaços, 
+							é preciso colocá-lo entre aspas. 
+							}
+							
+							ATRIBUÍDO A PASTA, EXECUTE O COMANDO 
+								git init 
+									INICIA UM REPOSITÓRIO NUMA PASTA, 
+							
+							EXECUTE O COMANDO, GARANTA QUE O ARQUIVO "index.html" 
+							SEJA IDENTIFICADO
+								git status 
+									MOSTRA INFORMAÇÕES DO REPOSITÓRIO 
+									
+							DADO SUA PRIMEIRA INTERAÇÃO NA PASTA REPOSITÓRIO, EXECUTE OS 
+							COMANDOS PARA ATRIBUIR SUAS INFORMAÇÕES NO CONTROLE 
+								git config --local user.name "Seu nome aqui"
+								git config --local user.email "seu@email.aqui"
+									CONFIGURA SUAS INFORMAÇÕES 
+									PARA O REGISTRO DAS VERSÕES DO CONTROLE 	
+							
+						}
+						
+						LISTA DE PROPRIEDADES {
+						
+							dir 
+							ls 
+								TAIS SÃO COMANDOS PARA MOSTRAR PASTAS 
+								WINDOWS & (LINUX||MAC), RESPECTIVAMENTE
+							git -- version 
+								MOSTRA A VERSÃO DO GIT 
+							cd "{ENDEREÇO.PASTA}"
+								ENTRA NA PASTA PARA ATRIBUIR COMANDOS 
+							git init 
+								INICIA UM REPOSITÓRIO NUMA PASTA, 
+							git status 
+								MOSTRA INFORMAÇÕES DO REPOSITÓRIO 
+							git add {NOME-ARQUIVO.extensão} 
+								ADICIONA UM ARQUIVO PARA COMPROMETÊ-LO AO CONTROLE
+							git config --local user.name "Seu nome aqui"
+							git config --local user.email "seu@email.aqui"
+								CONFIGURA SUAS INFORMAÇÕES 
+								PARA O REGISTRO DAS VERSÕES DO CONTROLE 
+								
+						}
+					
+					}
+					F TEORIA @2022.02.20 - 1311 T= 41m
+					
+					I PRÁTICA @2022.02.20 - 1340
+					F PRÁTICA @2022.02.20 - 1350 T=10m
+				
+				}
+				F DOCUMENTAÇÃO - @2022.02.20 - 1357 T = 1h30m
+				
+				LISTA DE PROPRIEDADES {
+					
+						dir 
+						ls 
+							TAIS SÃO COMANDOS PARA MOSTRAR PASTAS 
+							WINDOWS & (LINUX||MAC), RESPECTIVAMENTE
+						git -- version 
+							MOSTRA A VERSÃO DO GIT 
+						cd "{ENDEREÇO.PASTA}"
+							ENTRA NA PASTA PARA ATRIBUIR COMANDOS 
+						git init 
+							INICIA UM REPOSITÓRIO NUMA PASTA, 
+						git status 
+							MOSTRA INFORMAÇÕES DO REPOSITÓRIO 
+						git add {NOME-ARQUIVO.extensão} 
+							ADICIONA UM ARQUIVO PARA COMPROMETÊ-LO AO CONTROLE
+						git config --local user.name "Seu nome aqui"
+						git config --local user.email "seu@email.aqui"
+							CONFIGURA SUAS INFORMAÇÕES 
+							PARA O REGISTRO DAS VERSÕES DO CONTROLE 
+							
+					}
+			
+				1. O GIT É APRESENTADO COMO FERRAMENTA PARA CONTROLAR EDIÇÕES & COMPARTILHAR 
+				UMA PASTA CHAMADA DE "REPOSITÓRIO" PARA TRABALHO EM EQUIPE 
+			
+				2. COMO INICIAR UM REPOSITÓRIO 
+				3. COMO CONFIGURAR NOME DO USUÁRIO & E-MAIL PARA REGISTRO 
+					DE EDIÇÕES 
+				
+			}
+			
+			
+			
+			2 { INICIANDO TRABALHOS ~18min 8x 
+				I DOCUMENTAÇÃO - @2022.02.20 - 1430 {
+				
+					I TEORIA - @2022.02.20 - 1430 {
+						
+						O GIT MONITORA AS INSERÇÕES NOS ARQUIVOS 
+						DESCRITOS POR NÚMERO LINHAS MODIFICADAS 
+						
+						
+						1. COMPROMETER ALTERAÇÕES 
+						
+						TERMOS git status: {
+							HEAD: Estado atual do nosso código, ou seja, onde 
+							o Git os colocou
+							
+							Working tree: Local onde os arquivos realmente estão 
+							sendo armazenados e editados
+							
+							index: Local onde o Git armazena o que será commitado, 
+							ou seja, o local entre a working tree e o repositório Git em si.
+						
+							FONTE PARA MAIS INFORMAÇÕES: 
+							https://git-scm.com/book/pt-br/v2/Fundamentos-de-Git-Gravando-Altera%C3%A7%C3%B5es-em-Seu-Reposit%C3%B3rio
+						}
+						
+						PARA MAIS INFORMAÇÕES SOBRE COMPROMETER ALTERAÇÕES FONTE: 
+								https://git-scm.com/book/pt-br/v2/Fundamentos-de-Git-Gravando-Altera%C3%A7%C3%B5es-em-Seu-Reposit%C3%B3rio
+						
+						2. VISUALIZAR RELATÓRIO DE ALTERAÇÕES 
+						
+						EXERCÍCIO: {
+							
+							Para que o Git saiba quem está realizando as alterações, 
+							ele precisa de algumas configurações. Na primeira vez que 
+							você tentar realizar um commit em uma máquina, ele pedirá 
+							que você o configure.
+
+							Como podemos definir o nome da pessoa que executa commits no 
+							repositório local atual?
+							
+								1 - git config --local username "Nome da pessoa"
+								
+								2 - git config --local user.name "Nome da pessoa"
+								
+								3 - git config --global user.name "Nome da pessoa"
+							R: 2
+							Alternativa correta! Assim todos os commits executados 
+							neste repositório serão atribuídos à pessoa com nome 
+							Nome da pessoa. Para mais detalhes e outras configurações 
+							possíveis (até algumas mais avançadas), você pode conferir este link: 
+							https://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration.
+
+						}
+						
+						3. PARA CONFIGURAÇÕES AVANÇADAS NO git, FONTE: 
+							https://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration.
+						
+						4. IGNORANDO ARQUIVOS 
+							COMO FAZER COM QUE O git IGNORE A EXISTÊNCIA DE ALGUNS ARQUIVOS. 
+							
+							CRIE UM ARQUIVO DE TEXTO NOMEADO ".gitignore"
+							
+							O git SERÁ INFORMADO PARA IGNORAR TODOS OS ARQUIVOS, 
+							NOMEADOS CONFORME ESTEJA ESCRITO EM CADA LINHA DO ARQUIVO .txt
+							
+							APÓS ESCRITO OS NOMES DOS ARQUIVOS PARA IGNORAR, ADICIONE E COMPROMETA 
+							A ALTERAÇÃO DO ARQUIVO CRIADO ".gitignore" NO REPOSITÓRIO, PARA 
+							QUE OS ARQUIVOS ATRIBUÍDOS SEJAM IGNORADOS 
+							
+						5. É BOA PRÁTICA NÃO COMPROMETER ALTERAÇÕES DE CÓDIGO QUE 
+						NÃO ESTEJAM FUNCIONANDO 
+						
+						6. SIGA O PADRÃO DE COMPROMETIMENTO DE ALTERAÇÕES DA EMPRESA 
+						
+						LISTA DE PROPRIEDADES {
+						
+								git add {NOME-ARQUIVO.extensão} 
+							ADICIONA UM ARQUIVO PARA COMPROMETÊ-LO AO CONTROLE
+								git add .
+							ADICIONA TODOS OS ARQUIVOS PARA COMPROMETÊ-LOS NO CONTROLE 
+								git rm --cached {NOME-ARQUIVO.extensão} 
+							RETIRA UM ARQUIVO DO CONTROLE
+							
+								git commit -m "{MENSAGEM DO COMPROMETIMENTO}"
+							COMPROMETE MUDANÇAS NOS ARQUIVOS RECÉM ADICIONADOS NO CONTROLE
+							PELO COMANDO "git add {}"
+							
+								git log 
+							1. EXIBE COMPROMETIMENTOS NA EDIÇÃO DO REPOSITÓRIO 
+							INFORMAÇÕES EXIBIDAS: {
+								1. "HASH": 
+									CÓDIGO DO COMPROMETIMENTO
+								2. BRANCH: 
+									EXEMPLO: "HEAD -> master"
+								3. AUTOR 
+								4. E-MAIL DO AUTOR 
+								5. DATA
+								}
+							2. PRESSIONAR "ENTER" NAVEGA PARA EXIBIÇÃO DE VERSÕES ANTERIORES 
+							3. PRESSIONAR "Q" ENCERRA SUA EXECUÇÃO 
+								
+								git log --oneline
+							1. EXIBE UM RELATÓRIO RESUMIDO DE UMA LINHA
+							CADA COMPROMETIMENTO ATRIBUÍDO AO PROJETO 
+							2. PRESSIONAR "ENTER" NAVEGA PARA EXIBIÇÃO DE VERSÕES ANTERIORES 
+							3. PRESSIONAR "Q" ENCERRA SUA EXECUÇÃO 
+							
+								git log -p 
+							1. EXIBE UM RELATÓRIO DETALHADO 
+							EXIBINDO AS ALTERAÇÕES COMPROMETIDAS 
+								EM VERMELHO O QUE FOI REMOVIDO 
+								EM VERDE O QUE FOI ADICIONADO 
+							2. PRESSIONAR "ENTER" NAVEGA PARA EXIBIÇÃO DE VERSÕES ANTERIORES 
+							3. PRESSIONAR "Q" ENCERRA SUA EXECUÇÃO 
+								
+								git log --help
+							EXIBE MAIS FUNÇÕES DA PROPRIEDADE git log 
+								
+								MAIS PROPRIEDADES PARA git log 
+							https://devhints.io/git-log
+							
+								git config --local {PROPRIEDADE} 
+							ATRIBUI INFORMAÇÕES PARA CADA PROJETO
+							NA PASTA/REPOSITÓRIO ATRIBUÍDA 
+								
+								git config --global {PROPRIEDADE} 
+							ATRIBUI INFORMAÇÕES PARA A MÁQUINA 
+							
+								git config {PROPRIEDADE}
+							EXIBE A INFORMAÇÃO DA PROPRIEDADE ATRIBUÍDA 
+							NA PASTA ATRIBUÍDA 
+							
+									PROPRIEDADE: {
+											user.name "{NOME DO USUÁRIO}"
+										GRAVA O NOME DO AUTOR DE ALGUM COMPROMETIMENTO 
+											user.email "{E-MAIL DO USUÁRIO}"
+										GRAVA O EMAIL DO AUTOR DE ALGUM COMPROMETIMENTO 
+									}
+								
+								.gitignore 
+							CRIE UMA PASTA COM ESTE NOME, ADICIONE EM UMA LINHA DO ARQUIVO 
+							O NOME DE UM ARQUIVO COM SUA EXTENSÃO {EXEMPLO.txt}
+							PARA NÃO SER PROCESSADO PELO git
+						}
+						
+					}
+					F TEORIA - @2022.02.20 - 1513 T=43m
+					
+					I PRÁTICA @2022.02.20 - 1518 {
+					
+						VÁ ATÉ A PASTA RECÉM CRIADA 
+							cd "{NOME.PASTA}"
+							
+						EXECUTE 
+						git status 
+							
+						EXECUTE 
+							git add index.html 
+						PARA ADICIONAR AO CONTROLE PARA COMPROMETER O ARQUIVO 
+						
+						EXECUTE 
+							git status 
+						NOTE QUE O ARQUIVO ESTARÁ PRONTO A SER SALVO/COMPROMETIDO 
+						
+						APÓS EXECUTADO git add CONFORME SOLICITADO; 
+						EXECUTE 
+							git commit -m "Criando arquivo index.html com lista de cursos". 
+							
+						ALTERE O ARQUIVO index.html, ADICIONE O ACENTO EM "INTEGRAÇÃO CONTINUA"
+						
+						EXECUTE 
+							git add . 
+						PARA ADICIONAR TODOS OS ARQUIVOS AO CONTROLE PARA COMPROMETIMENTO 
+						(no caso só há um arquivo)
+						
+						EXECUTE 
+							git commit -m "Acento adicionado no curso de Integração Contínua"
+						
+						EXECUTE 
+							git log
+						
+						EXECUTE 
+							git log --oneline
+							
+						EXECUTE 
+							git log -p
+						
+						VEJA A DIFERENÇA ENTRE OS COMANDOS 
+						
+						CRIE UM ARQUIVO DE TEXTO CHAMADO, POR EXEMPLO "ide-config.txt"
+						
+						CRIE O ARQUIVO DE TEXTO ".gitignore" 
+						ADICIONE EM UMA LINHA DESTE O TEXTO SEM ASPAS, "ide-config.txt"
+						SALVE-O
+						
+						EXECUTE 
+							git status 
+						O ARQUIVO "ide-config" ESTARÁ AINDA SENDO EXIBIDO 
+						
+						ADICIONE PARA COMPROMETER .gitignore, 
+						E COMPROMETA-O COM A MENSAGEM CONFORME COMANDOS ABAIXO 
+							git add .gitignore
+							git commit -m "Adicionando .gitignore"
+							
+						EXECUTE 
+							git status
+						NOTE QUE O ARQUIVO "ide-config" NÃO SERÁ MAIS EXIBIDO
+						
+						////
+						@2022.02.20 - 1528 T@10m ALGORITMO CRIADO 
+						////
+						
+						//HOUVE PROBLEMAS, OS PASSOS PARA git ignore TIVERAM QUE SER AJUSTADOS 
+						//A EXTENSÃO DEVE SER ADICIONADA NO ARQUIVO DE TEXTO 
+						
+						
+						
+						
+					}	
+					F PRÁTICA @2022.02.20 - 1557 T=40m 
+				
+				}
+				F DOCUMENTAÇÃO - @2022.02.20 - 1605 T = 1h35min
+
+				LISTA DE PROPRIEDADES {
+				
+						git add {NOME-ARQUIVO.extensão} 
+					ADICIONA UM ARQUIVO PARA COMPROMETÊ-LO AO CONTROLE
+						git add .
+					ADICIONA TODOS OS ARQUIVOS PARA COMPROMETÊ-LOS NO CONTROLE 
+						git rm --cached {NOME-ARQUIVO.extensão} 
+					RETIRA UM ARQUIVO DO CONTROLE
+					
+						git commit -m "{MENSAGEM DO COMPROMETIMENTO}"
+					COMPROMETE MUDANÇAS NOS ARQUIVOS RECÉM ADICIONADOS NO CONTROLE
+					PELO COMANDO "git add {}"
+					
+						git log 
+					1. EXIBE COMPROMETIMENTOS NA EDIÇÃO DO REPOSITÓRIO 
+					INFORMAÇÕES EXIBIDAS: {
+						1. "HASH": 
+							CÓDIGO DO COMPROMETIMENTO
+						2. BRANCH: 
+							EXEMPLO: "HEAD -> master"
+						3. AUTOR 
+						4. E-MAIL DO AUTOR 
+						5. DATA
+						}
+					2. PRESSIONAR "ENTER" NAVEGA PARA EXIBIÇÃO DE VERSÕES ANTERIORES 
+					3. PRESSIONAR "Q" ENCERRA SUA EXECUÇÃO 
+						
+						git log --oneline
+					1. EXIBE UM RELATÓRIO RESUMIDO DE UMA LINHA
+					CADA COMPROMETIMENTO ATRIBUÍDO AO PROJETO 
+					2. PRESSIONAR "ENTER" NAVEGA PARA EXIBIÇÃO DE VERSÕES ANTERIORES 
+					3. PRESSIONAR "Q" ENCERRA SUA EXECUÇÃO 
+					
+						git log -p 
+					1. EXIBE UM RELATÓRIO DETALHADO 
+					EXIBINDO AS ALTERAÇÕES COMPROMETIDAS 
+						EM VERMELHO O QUE FOI REMOVIDO 
+						EM VERDE O QUE FOI ADICIONADO 
+					2. PRESSIONAR "ENTER" NAVEGA PARA EXIBIÇÃO DE VERSÕES ANTERIORES 
+					3. PRESSIONAR "Q" ENCERRA SUA EXECUÇÃO 
+						
+						
+						git log --help
+					EXIBE MAIS FUNÇÕES DA PROPRIEDADE git log 
+						
+						MAIS PROPRIEDADES PARA git log 
+					https://devhints.io/git-log
+					
+						git config --local {PROPRIEDADE} 
+					ATRIBUI INFORMAÇÕES PARA CADA PROJETO
+					NA PASTA/REPOSITÓRIO ATRIBUÍDA 
+						
+						git config --global {PROPRIEDADE} 
+					ATRIBUI INFORMAÇÕES PARA A MÁQUINA 
+					
+						git config {PROPRIEDADE}
+					EXIBE A INFORMAÇÃO DA PROPRIEDADE ATRIBUÍDA 
+					NA PASTA ATRIBUÍDA 
+					
+							PROPRIEDADE: {
+									user.name "{NOME DO USUÁRIO}"
+								GRAVA O NOME DO AUTOR DE ALGUM COMPROMETIMENTO 
+									user.email "{E-MAIL DO USUÁRIO}"
+								GRAVA O EMAIL DO AUTOR DE ALGUM COMPROMETIMENTO 
+							}
+						
+						.gitignore 
+					CRIE UMA PASTA COM ESTE NOME, ADICIONE EM UMA LINHA DO ARQUIVO 
+					O NOME DE UM ARQUIVO COM SUA EXTENSÃO {EXEMPLO.txt}
+					PARA NÃO SER PROCESSADO PELO git
+				}
+				
+				1. COMPROMETER ALTERAÇÕES NO REGISTRO  
+				2. VISUALIZAR RELATÓRIO DE ALTERAÇÕES 
+				3. PARA CONFIGURAÇÕES AVANÇADAS NO git, FONTE: 
+					https://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration.
+				4. IGNORANDO ARQUIVOS 
+					
+			}	
+			
+			
+			
+			3 { COMPARTILHANDO O TRABALHO ~23min 6x 
+				I DOCUMENTAÇÃO - @2022.02.23 - 0800 {
+			
+					I TEORIA - @2022.02.23 - 0800 {
+
+						EXERCÍCIO { 
+						
+						No último vídeo, nós trabalhamos bastante. 
+						Nossa primeira tarefa foi criar um novo repositório, 
+						que será utilizado como o nosso "servidor" Git, ou seja, 
+						todos os membros da equipe o acessarão para compartilhar 
+						suas mudanças.
+
+						Como fizemos para definir um repositório Git neste caso?
+						
+							1. git init --bare
+							
+							2. git serve
+							
+							3. git init
+							
+						R: 1
+						Alternativa correta! Com este comando nós criamos um repositório 
+						que não terá a working tree, ou seja, não conterá uma cópia 
+						dos nossos arquivos. Como o repositório servirá apenas como 
+						servidor, para que outros membros da equipe sincronizem seus 
+						trabalhos, poupamos espaço de armazenamento desta forma.
+						}
+					
+						EXERCÍCIO { 
+						
+							Antes de sincronizar as nossas mudanças no código com algum 
+							repositório remoto, precisamos adicioná-lo ao nosso repositório local.
+
+							Como adicionamos esta ligação entre os repositórios?
+							
+								1. git remote nome-repositorio caminho/para/o/repositorio
+								
+								2. git add remote nome-repositorio caminho/para/o/repositorio
+								
+								3. git remote add nome-repositorio caminho/para/o/repositorio
+								
+							R: 3 
+							Alternativa correta! Desta forma teremos um link do nosso 
+							repositório local com o repositório remoto, que chamamos de 
+							nome-repositorio, que está armazenado em caminho/para/o/repositorio.
+						
+						}
+						
+						ARQUIVOS NO SERVIDOR NÃO SÃO COMPARADOS COM 
+						ARQUIVOS DA PASTA ATUAL 
+						
+						PARA SABER SE HÁ OU NÃO MODIFICAÇÕES NO SERVIDOR COMUM 
+						É NECESSÁRIO COMUNICAÇÃO INTERPESSOAL, INFORMANDO A 
+						NECESSIDADE DE EXECUTAR git pull 
+						
+						git log -p 
+						EXIBIRÁ MODIFICAÇÕES IMPORTADAS PELO git pull 
+						
+						EXERCÍCIO { 
+						
+							Além de adicionar repositórios remotos para sincronizar os dados, 
+							vimos que o git clone traz um repositório remoto para o nosso 
+							computador, criando um repositório local.
+
+							Ao alterar os códigos em nosso repositório local, como enviar 
+							as alterações para o repositório remoto?
+							
+								1. git push [repositorio] master
+								
+								2. git pull [repositorio] master
+								
+								3. git push master [repositorio]
+								
+							R: 1 
+							Alternativa correta! Desta forma, nós enviamos as alterações em 
+							nosso branch master (falaremos mais sobre branches já já) para o 
+							repositório remoto. Basta substituir [repositorio] pelo nome que 
+							demos ao repositório ao adicioná-lo. Já para trazer os dados que 
+							estiverem no repositório remoto, podemos utilizar o git pull 
+							[repositorio] master
+						}
+						
+						LISTA DE PROPRIEDADES: { 
+						
+								cd ..
+							NAVEGA PARA A PASTA ANTERIOR A ATUAL 
+								
+								git init --bare 
+							COMANDO PARA INICIAR UM REPOSITÓRIO-SERVIDOR
+								ONDE APENAS CONTÉM AS ALTERAÇÕES, SEM CÓPIAS DE ARQUIVOS 
+								
+								git remote 
+							EXIBE OS REPOSITÓRIOS REMOTOS LINKADOS NO REPOSITÓRIO ATUAL 
+							
+								git remote add {NOME-SERVIDOR-NA-PASTA-ATUAL} {ENDEREÇO.DO.SERVIDOR(PASTA OU URL)} 
+							ADICIONA UM REPOSITÓRIO REMOTO LINKANDO-O NO ATUAL 
+							
+								git remote -v 
+							EXIBE OS NOMES E ENDEREÇOS DOS SERVIDORES LINKADOS PARA BUSCA & ENTREGA 
+								DE DADOS 
+								
+								mkdir {NOME.PASTA} 
+							CRIA UMA NOVA PASTA NA PASTA ATRIBUÍDA ATUAL 
+								
+								git clone {ENDEREÇO.SERVIDOR} {NOME.NOVA-PASTA-DADOS} 
+							IMPORTA UMA CÓPIA DOS DADOS DO {ENDEREÇO.SERVIDOR} PARA 
+								UMA NOVA PASTA CRIADA {NOME.NOVA-PASTA-DADOS} 
+								DENTRO DA PASTA ATUAL ATRIBUÍDA NO GIT BASH 
+								
+								git push {NOME-SERVIDOR-NA-PASTA-ATUAL} {BRANCH-ATUAL} 
+							~BRANCH: LINHA DE TRABALHO, VERSÃO DOS MEUS ARQUIVOS. 
+							ENVIA PARA UM SERVIDOR JÁ ADICIONADO NA PASTA ATUAL 
+							(visualizado seus nomes com o comando "git remote") 
+							OS DADOS DO BRANCH ATUAL 
+							(EXEMPLO: BRANCH "master", nome azul após o nome da pasta 
+							fornecido pelo git bash) 
+							PARA O SERVIDOR REMOTO 
+							
+								git push -u {NOME-SERVIDOR-NA-PASTA-ATUAL} {BRANCH-ATUAL} 
+							SEMPRE QUE ESTIVER NA "BRANCH-ATUAL" ESPECÍFICA, 
+							EXECUTAR O COMANDO 
+								git push 
+							ENVIARÁ PARA O {NOME-SERVIDOR-NA-PASTA-ATUAL}
+								
+								git pull {NOME-SERVIDOR-NA-PASTA-ATUAL} {BRANCH-ATUAL-NA-PASTA} 
+							IMPORTA PARA MINHA PASTA ATUAL, OS DADOS DO SERVIDOR REMOTO 
+							NA MINHA BRANCH ATUAL, EXECUTARÁ UMA ATUALIZAÇÃO LOCAL 
+								
+								git remote rename {NOME-SERVIDOR-NA-PASTA-ATUAL} {NOVO.NOME-SERVIDOR-NA-PASTA-ATUAL}
+							RENOMEIA UM SERVIDOR NA PASTA ATUAL, CONFORME DESCRITO 
+							
+								www.github.com 
+							NESTE SITE HÁ A POSSIBILIDADE PARA CRIAR SERVIDORES REMOTOS GRATUITOS 
+							NO SITE, HÁ O PROCEDIMENTO CASO CONVENIENTE 
+							TAIS SERVIDORES SEGUEM AS MESMAS PROPRIEDADES DE SERVIDORES LOCAIS 
+									
+							}
+					}
+					F TEORIA - @2022.02.23 - 0853 T = 53min
+					
+					I PRÁTICA @2022.02.23 - 0853 {
+						
+						DECLARAÇÃO DE PROCEDIMENTOS: 
+						
+							1. CRIE UMA NOVA PASTA NOMEADA "REPOSITÓRIO_SERVIDOR"
+								(será criado ao lado do repositório atual) 
+							
+							2. NO GIT BASH, ATRIBUA A PASTA "REPOSITÓRIO_SERVIDOR" 
+								COMANDO cd 
+								
+							3. EXECUTE O COMANDO git init --bare 
+								NOTA: 
+									CASO INICIADO SEM O COMANDO --bare, EXECUTE: 
+										git config core.bare true
+										
+							4. ENTRE NO SEU REPOSITÓRIO
+							
+								1. ADICIONE O "REPOSITÓRIO_SERVIDOR" 
+									COMO REPOSITÓRIO REMOTO 
+										git remote add {NOME-SERVIDOR-NA-PASTA-ATUAL} "{ENDEREÇO.DO.SERVIDOR(PASTA OU URL)}" 
+										
+									1. NOMEIE {NOME-SERVIDOR-NA-PASTA-ATUAL} 
+										COMO "local"
+									2. ATRIBUA O "{ENDEREÇO.DO.SERVIDOR(PASTA OU URL)}"
+										COM O ENDEREÇO DA PASTA "REPOSITÓRIO_SERVIDOR" 
+										
+										CASO POSSUA ESPAÇOS NO ENDEREÇO, ADICIONE-O 
+										ENTRE ASPAS DUPLAS
+							
+							5. CRIE UMA NOVA PASTA NOMEADA "REPOSITÓRIO_TERCEIRO" 
+								(será criado ao lado dos repositórios atuais)
+								(representará a pasta de um integrante da equipe) 
+							
+							6. ATRIBUA A PASTA CRIADA NO GIT BASH 
+							
+							7. EXECUTE git clone "{ENDEREÇO.DO.SERVIDOR(PASTA OU URL)}" {NOME.NOVA-PASTA-DADOS} 
+								
+								1. NOMEIE {NOME.NOVA-PASTA-DADOS} 
+									"PROJETO" 
+									
+							8. OBSERVE QUE O REPOSITÓRIO CLONADO ESTÁ VAZIO 
+							
+							9. ATRIBUA NO GIT BASH A PASTA "PROJETO" 
+							
+							10. EXECUTE O COMANDO 
+								
+								git remote rename origin local 
+								
+									DESCRIÇÃO: 
+									git remote rename {NOME-SERVIDOR-NA-PASTA-ATUAL} {NOVO.NOME-SERVIDOR-NA-PASTA-ATUAL}
+									RENOMEIA UM SERVIDOR NA PASTA ATUAL, CONFORME DESCRITO 
+							
+							11. NO GIT BASH, ATRIBUA A PASTA DO SEU PROJETO ORIGINAL 
+								
+							12. EXECUTE O COMANDO 
+								git push local main 
+							PARA ENVIAR SUAS MODIFICAÇÕES PARA O SEU SERVIDOR; 
+							
+							//HOUVE UM ERRO, EXECUTE: 
+								git push local master 
+								
+									DESCRIÇÃO: 
+									git push {NOME-SERVIDOR-NA-PASTA-ATUAL} {BRANCH-ATUAL} 
+							
+							13. NAVEGUE ATÉ A PASTA "REPOSITÓRIO_TERCEIRO"
+
+							
+							14. EXECUTE O COMANDO 
+								git pull local main 
+							PARA BAIXAR AS MODIFICAÇÕES 
+							
+							//HOUVE UM ERRO 
+								DEVE SER NAVEGADO ATÉ A PASTA "PROJETO" 
+								CRIADA NO PASSO 9
+								EXECUTANDO: 
+								git pull local master
+								
+							15. ABRA O NAVEGADOR, ACESSE: 
+								http://github.com/ 
+							
+							16. CRIE UMA CONTA 
+							
+							17. CRIE UM NOVO REPOSITÓRIO 
+							
+							18. NO GIT BASH, ADICIONE NO SEU REPOSITÓRIO ORIGINAL, 
+							O NOVO REPOSITÓRIO REMOTO RECÉM CRIADO 
+								(PROCEDIMENTOS NO GITHUB) 
+							
+							19. EXECUTE git push origin main 
+							PARA ENVIAR ALTERAÇÕES PARA O GitHub. 
+							
+							//
+							@2022.02.23 - 09:12 T@20m ALGORITMO CRIADO 
+							// 
+							
+							
+					}
+					F PRÁTICA @2022.02.23 - 09:37 T = 45min 
+				}
+				F DOCUMENTAÇÃO - @2022.02.23 - 0953 T = 2h
+				
+				LISTA DE PROPRIEDADES: { 
+						
+								cd ..
+							NAVEGA PARA A PASTA ANTERIOR A ATUAL 
+								
+								git init --bare 
+							COMANDO PARA INICIAR UM REPOSITÓRIO-SERVIDOR
+								ONDE APENAS CONTÉM AS ALTERAÇÕES, SEM CÓPIAS DE ARQUIVOS 
+								
+								git remote 
+							EXIBE OS REPOSITÓRIOS REMOTOS LINKADOS NO REPOSITÓRIO ATUAL 
+							
+								git remote add {NOME-SERVIDOR-NA-PASTA-ATUAL} {ENDEREÇO.DO.SERVIDOR(PASTA OU URL)} 
+							ADICIONA UM REPOSITÓRIO REMOTO LINKANDO-O NO ATUAL 
+							
+								git remote -v 
+							EXIBE OS NOMES E ENDEREÇOS DOS SERVIDORES LINKADOS PARA BUSCA & ENTREGA 
+								DE DADOS 
+								
+								mkdir {NOME.PASTA} 
+							CRIA UMA NOVA PASTA NA PASTA ATRIBUÍDA ATUAL 
+								
+								git clone {ENDEREÇO.SERVIDOR} {NOME.NOVA-PASTA-DADOS} 
+							IMPORTA UMA CÓPIA DOS DADOS DO {ENDEREÇO.SERVIDOR} PARA 
+								UMA NOVA PASTA CRIADA {NOME.NOVA-PASTA-DADOS} 
+								DENTRO DA PASTA ATUAL ATRIBUÍDA NO GIT BASH 
+								
+								git push {NOME-SERVIDOR-NA-PASTA-ATUAL} {BRANCH-ATUAL} 
+							~BRANCH: LINHA DE TRABALHO, VERSÃO DOS MEUS ARQUIVOS. 
+							ENVIA PARA UM SERVIDOR JÁ ADICIONADO NA PASTA ATUAL 
+							(visualizado seus nomes com o comando "git remote") 
+							OS DADOS DO BRANCH ATUAL 
+							(EXEMPLO: BRANCH "master", nome azul após o nome da pasta 
+							fornecido pelo git bash) 
+							PARA O SERVIDOR REMOTO 
+							
+								git push -u {NOME-SERVIDOR-NA-PASTA-ATUAL} {BRANCH-ATUAL} 
+							SEMPRE QUE ESTIVER NA "BRANCH-ATUAL" ESPECÍFICA, 
+							EXECUTAR O COMANDO 
+								git push 
+							ENVIARÁ PARA O {NOME-SERVIDOR-NA-PASTA-ATUAL}
+								
+								git pull {NOME-SERVIDOR-NA-PASTA-ATUAL} {BRANCH-ATUAL-NA-PASTA} 
+							IMPORTA PARA MINHA PASTA ATUAL, OS DADOS DO SERVIDOR REMOTO 
+							NA MINHA BRANCH ATUAL, EXECUTARÁ UMA ATUALIZAÇÃO LOCAL 
+								
+								git remote rename {NOME-SERVIDOR-NA-PASTA-ATUAL} {NOVO.NOME-SERVIDOR-NA-PASTA-ATUAL}
+							RENOMEIA UM SERVIDOR NA PASTA ATUAL, CONFORME DESCRITO 
+							
+								www.github.com 
+							NESTE SITE HÁ A POSSIBILIDADE PARA CRIAR SERVIDORES REMOTOS GRATUITOS 
+							NO SITE, HÁ O PROCEDIMENTO CASO CONVENIENTE 
+							TAIS SERVIDORES SEGUEM AS MESMAS PROPRIEDADES DE SERVIDORES LOCAIS 
+									
+							}
+							
+				1. INICIAR REPOSITÓRIOS REMOTOS (SERVIDORES) 
+				2. LINKAR REPOSITÓRIOS REMOTOS 
+				3. EXPORTAR DADOS PARA REPOSITÓRIOS REMOTOS 
+				4. IMPORTAR DADOS DE REPOSITÓRIOS REMOTOS 
+				5. CRIAR REPOSITÓRIOS REMOTOS ONLINE 
+					http://github.com/
+					
+			}
+			
+			
+			
+			4 { TRABALHANDO EM EQUIPE ~27min - 7x 
+				I DOCUMENTAÇÃO - @2022.02.23 - 1015 {
+			
+					I TEORIA - @2022.02.23 - 1015 {
+						
+						INTERVALOS: {
+						PAUSA 
+						F@2022.02.23 - 1047 T = 30min
+
+						INTERVALO
+						I@2022.02.24 - 1004
+						F@2022.02.24 - 1131 T = 1h25m
+
+						INTERVALO
+						I@2022.02.27 - 1012
+						F@2022.02.27 - 1027 T = 10m 
+						}
+
+
+						LISTA DE PROPRIEDADES: { 
+						
+								git branch 
+							EXIBE AS LINHAS DE DESENVOLVIMENTO DO PROJETO 
+							
+							OS "BRANCHES" 
+							NORMALMENTE SÃO UTILIZADOS PARA QUE 
+							CADA DESENVOLVEDOR TRABALHE DE FORMA INDEPENDENTE, 
+							EM SUAS RESPECTIVAS SEÇÕES DE CÓDIGO RELEVANTES 
+							
+							NO FINAL DA LINHA QUE MOSTRA A PASTA ATRIBUÍDA NO 
+							GIT BASH, 
+							É EXIBIDO O BRANCH ATUAL, COM A VERSÃO DO CÓDIGO 
+							DA RESPECTIVA BRANCH 
+							
+								git branch {NOME-DA-BRANCH}
+							CRIA UM NOVO BRANCH, COM UMA NOVA VERSÃO 
+							DO CÓDIGO, 
+							RESPECTIVA A LINHA DE DESENVOLVIMENTO DESEJADA 
+							
+								git checkout {NOME-DA-BRANCH} 
+							ATRIBUI UMA DAS LINHAS DE DESENVOLVIMENTO 
+							EXISTENTES NO PROJETO 
+								(discriminadas com o comando "git branch") 
+								
+								git checkout -b {NOME-DA-BRANCH} 
+							CRIA O BRANCH, ATRIBUI O BRANCH COMO ATUAL 
+							
+								git merge {BRANCH-PARA-MERGE}
+							EXECUTA O MERGE (UNIÃO) DA BRANCH ATRIBUÍDA NA 
+							FUNÇÃO, COM BRACH ATUAL. A ORDEM IMPORTA. 
+								CRIANDO UM NOVO COMMIT 
+							PARA SALVAR O COMMIT E CONFIRMAR: 
+								:x + ENTER
+							OU 
+								ou Q 
+							APÓS EXECUTADO O MERGE, AS EDIÇÕES COMPROMETIDAS EM 
+							OUTROS BRANCHES NÃO SERÃO DISCRIMINADAS, 
+							NÃO SERÁ SEGREGADO A BRANCH ANTERIORMENTE EM EDIÇÃO,  
+							NO git log 
+							
+								git rebase {BRANCH.ATRIBUÍDA} 
+							1. NÃO GERA REGISTROS (commits) DE MERGE 
+							2. EXECUTA TODAS AS EDIÇÕES (commmits) DO REGISTRO DA 
+							BRANCH ATUAL 
+							EM FRENTE DE UMA BRANCH, QUE É ATRIBUÍDA COMO 
+							A NOVA BRANCH PRINCIPAL DE DESENVOLVIMENTO 
+							{BRANCH.ATRIBUÍDA}
+							3. "REBASEIA" O DESENVOLVIMENTO ATUAL 
+							SOB UMA BRANCH ATRIBUÍDA NA FUNÇÃO 
+							
+								git log --graph 
+							ELE MOSTRA OS REGISTROS DE commits, 
+							E AS LINHAS DE DESENVOLVIMENTO BRANCHES 
+							ATRIBUÍDAS AOS REGISTROS 
+							
+								clear 
+							LIMPA A TELA DOS COMANDOS JÁ EXECUTADOS 
+						
+						}
+					
+					
+						PROCEDIMENTO EXEMPLO 1: { 
+						
+							FERRAMENTA "VISUALIZING GIT" 
+							
+							EXECUTE
+								git branch titulo 
+							SERÁ ADICIONADO UM NOVO BRANCH (linha de desenvolvimento) 
+							
+							EXECUTE 
+								git checkout titulo 
+							SERÁ ATRIBUÍDO A LINHA DE DESENVOLVIMENTO "titulo" 
+							
+							EXECUTE 
+								git commit 
+							
+							EXECUTE 
+								git commit 
+								
+							EXECUTE 
+								git checkout master 
+							RETORNA A LINHA DE DESENVOLVIMENTO master 
+								
+							EXECUTE 
+								git commit
+							
+							EXECUTE 
+								git commit
+							
+							EXECUTE 
+								git commit
+							
+							NA BRANCH master, EXECUTE: 
+								git merge titulo 
+						
+						}
+							1. PERMITE VER UM FLUXOGRAMA DO FUNCIONAMENTO DO GIT 
+							2. EXIBE O CONCEITO DO DESENVOLVIMENTO INDEPENDENTE 
+								ENTRE LINHAS DE DESENVOLVIMENTO 
+							3. EXIBE O COMPORTAMENTO DO git merge 
+						
+						
+						1. CADA EDIÇÃO COMPROMENTIDA EM UMA BRANCH 
+							REPRESENTA UMA LINHA DE DESENVOLVIMENTO 
+							INICIADA A PARTIR DE UMA RAMIFICAÇÃO 
+							DE UMA BRANCH DO CÓDIGO PRINCIPAL 
+						
+						2. A BRANCH PRINCIPAL, É A BRANCH "master" 
+							
+						3. AS EDIÇÕES EM UMA BRANCH NÃO INFLUENCIAM EM OUTRA 
+							ENQUANTO RAMIFICADAS
+							
+							
+						EXERCÍCIO: { 
+						
+						Agora que entendemos como separar o desenvolvimento em linhas ("ramos") 
+						diferentes, é hora de trazer estas modificações para a master, que é a 
+						nossa branch "padrão".
+						
+						Como podemos fazer o merge da branch titulo para a branch master?
+						
+							1. git merge titulo
+							
+							2. git checkout titulo e git merge master
+							
+							3. git checkout master e git merge titulo
+							
+						R: 
+						
+						}
+						
+						
+						4. O git merge GERA RELATÓRIOS DE commits 
+							DA UNIÃO EXECUTADA 
+							O QUE PODE "POLUIR" A APRESENTAÇÃO 
+							DO git log 
+							
+						5. O git rebase NÃO GERA RELATÓRIOS DE commits 
+							DA UNIÃO EXECUTADA 
+							
+						EXERCÍCIO: { 
+						
+						Já sabemos como trazer o trabalho de outra branch e unir 
+						com a branch atual. Conhecemos duas formas de fazer isso: 
+						merge e rebase.
+						
+						Neste cenário, qual a diferença entre os comandos rebase e merge? 
+						
+							1. O rebase junta os trabalhos e gera um commit de junção. 
+							O merge aplica os commits de outra branch na branch atual.
+							
+							2. O merge junta os trabalhos e gera um merge commit. 
+							O rebase aplica os commits de outra branch na branch atual.
+							
+							3. Ambos são sinônimos, ou seja, não há diferença
+							
+						R: Alternativa correta! Com isso, evitamos os commits de merge. 
+						Há uma longa discussão sobre o que é "melhor": rebase ou merge. 
+						Estude, pesquise, e tire suas próprias conclusões. 
+						Aqui tem um artigo (de milhares outros) que cita o assunto: 
+						https://medium.com/datadriveninvestor/git-rebase-vs-merge-cc5199edd77c.
+						
+						}
+							
+						6. DIFERENÇA ENTRE git merge E git rebase 
+							https://medium.com/datadriveninvestor/git-rebase-vs-merge-cc5199edd77c 
+							
+						7. EDIÇÕES EM CONFLITO: 
+							É POSSÍVEL UMA MESMA SEÇÃO DE CÓDIGO SER EDITADA 
+							MÚTUAMENTE 
+							
+							ATRAVÉS DE  
+							1. git merge; 
+							2. git rebase; 
+							
+							CASO SEJAM EXECUTADOS EM 2 DESENVOLVIMENTOS 
+							QUE POSSUAM EDIÇÕES SOBREPOSTAS, 
+							
+							O GIT EDITARÁ O CÓDIGO, 
+							O EDITOR DE TEXTO, COMUMENTE DESTACARÁ OS CONFLITOS 
+							E SERÁ SOLICITADO ESCOLHER QUAL EDIÇÃO PREVALESCERÁ 
+							APAGANDO A REDUNDANTE 
+							
+						9. SEMPRE ANTES DE ENVIAR O ARQUIVO (git push) 
+							IMPORTE-O (git pull) PARA GARANTIR QUE SEU ARQUIVO ESTEJA 
+							ATUALIZADO & SEM CONFLITOS 
+						
+							EXEMPLO: {
+								8. AO ENVIAR PARA O SERVIDOR (git push), ERRO: 
+								CASO A VERSÃO LOCAL DO ARQUIVO ESTEJA DESATUALIZADA 
+								DEVERÁ SER EXECUTADA A IMPORTAÇÃO & MERGE (git pull) 
+								CORRIGIDO QUAISQUER CONFLITOS 
+								APÓS ISSO, SERÁ POSSÍVEL ENVIAR PARA O SERVIDOR. 
+							}
+						
+					}
+					F TEORIA - @2022.02.27 - 1027 T = 2h05m
+					
+					I PRÁTICA - @2022.02.27 - 1520 {
+						
+						1) Execute o comando 
+							git branch 
+						e veja que apenas a branch "master" existe 
+						no seu repositório;
+
+						2) Execute o comando 
+							git branch titulo 
+						e logo após execute o comando 
+							git branch. 
+						Veja que uma nova branch foi criada;
+
+						3) Agora, para começar a trabalhar nesta branch, digite 
+						git checkout titulo
+						;
+
+						4) Execute novamente 
+								git branch 
+							e confira que agora você está na branch chamado "titulo";
+
+						5) Altere o título da página index.html para "Cursos de DevOps da Alura";
+
+						6) Adicione as alterações com 
+								git add index.html
+							;
+
+						7) Faça o commit, com 
+								git commit -m "Alterando título da página"
+							;
+
+						8) Execute o comando 
+								git log 
+							e confira o novo commit;
+
+						9) Altere o título da página para "Lista de cursos de DevOps da Alura";
+
+						10) Repita os passos 6 e 7, para adicionar um novo commit, alterando a 
+						mensagem;
+
+						11) Repita o passo 8 para conferir o novo commit;
+
+						12) Execute o comando 
+								git checkout master 
+							para voltar à linha de desenvolvimento "master";
+
+						13) Execute 
+								git log 
+							para conferir que os últimos dois commits não estão lá. 
+							Confira se o conteúdo do seu arquivo também voltou ao seu estado original;
+
+						14) Na pasta criada para representar o trabalho de outra pessoa na 
+						aula anterior:
+
+							1. Execute 
+									git checkout -b lista 
+								para criar uma nova branch, chamada "lista" e passar a trabalhar nela;
+								
+							2. Adicione o curso de "Kubernetes" na lista;
+							
+							3. Repita os passos 6 e 7 para adicionar um novo commit, alterando a mensagem;
+							
+							4. Execute o comando 
+									git checkout master 
+								para voltar à linha de desenvolvimento "master";
+								
+							CONFIGURE O NOME, EMAIL, 
+							EXECUTE 
+								git add .
+								git commit -m 
+						
+						15) Volte para a pasta que representa o seu próprio trabalho;
+
+						16) Altere o nome do curso de "Docker" para "Docker: Criando containers sem dor de cabeça";
+
+						17) Repita os passos 6 e 7 para adicionar um novo commit, alterando a mensagem;
+
+						18) Execute o comando 
+								git merge titulo 
+							para trazer o trabalho feito na branch "titulo" para a branch "master";
+							<:x> termina a execução do merge 
+
+						19) Execute o comando 
+								git log --graph 
+							para ver as linhas de desenvolvimento (branches);
+
+						20) Execute 
+								git checkout titulo 
+							para trabalhar na branch chamada titulo;
+
+						21) Altere o título para ter a palavra "Cursos" com letra maiúscula;
+
+						22) Repita os passos 6 e 7 para adicionar um novo commit, alterando a mensagem;
+
+						23) Execute o comando 
+								git checkout master 
+							para voltar à linha de desenvolvimento master;
+
+						24) Execute o comando 
+								git rebase titulo;
+
+						25) Execute o comando 
+								git log 
+							e confira que o commit foi adicionado antes do commit realizado diretamente na 
+							branch master;
+							
+							O COMMIT EXECUTADO EM TÍTULO FOI ADICIONADO ANTES DOS COMMITS DE MERGE DA MASTER (PASSO 16)
+
+						26) Execute o comando 
+								git push local master 
+							para enviar suas alterações para o repositório remoto que criamos na última aula;
+
+						27) Na pasta criada para representar o trabalho de outra pessoa na aula anterior:
+
+							1. Execute o comando 
+									git pull local master 
+								para baixar as alterações que você já realizou;
+						
+								EXECUTE A CORREÇÃO DE DIVERGÊNCIAS (edições em mesmas linhas), DEPOIS git add DEPOIS git commit 
+								EXECUTE NOVAMENTE O git pull 
+						
+							2. Execute o comando 
+									git checkout lista 
+								para continuar trabalhando na lista de cursos;
+								
+							3. Altere o nome do curso de "Docker" para "Curso de Docker: Criando containers sem dor de cabeça";
+							
+							4. Repita os passos 6 e 7 para adicionar um novo commit, alterando a mensagem;
+							
+							5. Execute o comando 
+									git checkout master 
+								para voltar à linha de desenvolvimento master;
+							
+							6. Tente juntar seu trabalho com git merge lista;
+							
+							7. Veja que há conflitos. Corrija-os, deixando apenas a linha com o nome correto do curso;
+								
+								APÓS O MERGE, A BRANCH LISTA ESTARÁ DESATUALIZADA 
+							
+							8. Execute o comando 
+									git add index.html 
+								para informar que os conflitos neste arquivo foram corrigidos;
+							
+							9. Execute o comando 
+									git commit 
+								para que o Git finalize o merge;
+							
+							10. Execute o comando 
+									git push local master 
+								para enviar as suas alterações;
+							
+						28) Volte para a pasta que representa o seu próprio trabalho;
+
+						29) Altere o nome do curso de Vagrant para "Vagrant: Gerenciando máquinas virtuais";
+
+						30) Repita os passos 6 e 7 para adicionar um novo commit, alterando a mensagem;
+
+						31) Tente executar o comando git push local master. Veja a falha;
+
+						32) Execute o comando git pull local master para trazer as alterações da outra pessoa;
+						
+							REVISE COM AS EDIÇÕES CORRETAS
+						
+						33) Agora sim, execute o comando git push local master para enviar as alterações.
+						
+					
+					}
+					F PRÁTICA - @2022.02.27 - 1630 T = 1h10m
+					}
+				F DOCUMENTAÇÃO - @2022.02.27 - 1640 T = 3h25m
+				
+				1. UNIR TRABALHOS 
+					
+					merge: 
+						EXECUTA UM commit (registro) DE UNIÃO ENTRE LINHAS DE DESENVOLVIMENTO 
+						DA BRANCH ATRIBUÍDA COM A ATUAL  
+						
+					rebase: 
+						EXPORTA OS COMMITS DA BRANCH ATUAL 
+						POSICIONANDO-OS EM SÉRIE APÓS OS COMMITS 
+						DA BRANCH ATRIBUÍDA 
+				
+				2. CORRIGINDO DIVERGÊNCIAS 
+					CASO ALTERAÇÕES SEJAM FEITAS MÚTUAMENTE NAS MESMAS LINHAS
+					GERARÁ UMA DIVERGÊNCIA AO UNIR LINHAS DE TRABALHO 
+					TAIS DIVERGÊNCIAS DEVEM SER RETIFICADAS, E COMPROMETIDAS NO REGISTRO 
+				
+					LISTA DE PROPRIEDADES: { 
+						
+								git branch 
+							EXIBE AS LINHAS DE DESENVOLVIMENTO DO PROJETO 
+							
+							OS "BRANCHES" 
+							NORMALMENTE SÃO UTILIZADOS PARA QUE 
+							CADA DESENVOLVEDOR TRABALHE DE FORMA INDEPENDENTE, 
+							EM SUAS RESPECTIVAS SEÇÕES DE CÓDIGO RELEVANTES 
+							
+							NO FINAL DA LINHA QUE MOSTRA A PASTA ATRIBUÍDA NO 
+							GIT BASH, 
+							É EXIBIDO O BRANCH ATUAL, COM A VERSÃO DO CÓDIGO 
+							DA RESPECTIVA BRANCH 
+							
+								git branch {NOME-DA-BRANCH}
+							CRIA UM NOVO BRANCH, COM UMA NOVA VERSÃO 
+							DO CÓDIGO, 
+							RESPECTIVA A LINHA DE DESENVOLVIMENTO DESEJADA 
+							
+								git checkout {NOME-DA-BRANCH} 
+							ATRIBUI UMA DAS LINHAS DE DESENVOLVIMENTO 
+							EXISTENTES NO PROJETO 
+								(discriminadas com o comando "git branch") 
+								
+								git checkout -b {NOME-DA-BRANCH} 
+							CRIA O BRANCH, ATRIBUI O BRANCH COMO ATUAL 
+							
+								git merge {BRANCH-PARA-MERGE}
+							EXECUTA O MERGE (UNIÃO) DA BRANCH ATRIBUÍDA NA 
+							FUNÇÃO, COM BRACH ATUAL. A ORDEM IMPORTA. 
+								CRIANDO UM NOVO COMMIT 
+							PARA SALVAR O COMMIT E CONFIRMAR: 
+								:x + ENTER
+							OU 
+								ou Q 
+							APÓS EXECUTADO O MERGE, AS EDIÇÕES COMPROMETIDAS EM 
+							OUTROS BRANCHES NÃO SERÃO DISCRIMINADAS, 
+							NÃO SERÁ SEGREGADO A BRANCH ANTERIORMENTE EM EDIÇÃO, 
+							NO git log 
+							
+								git rebase {BRANCH.ATRIBUÍDA} 
+							1. NÃO GERA REGISTROS (commits) DE MERGE 
+							2. EXECUTA TODAS AS EDIÇÕES (commmits) DO REGISTRO DA 
+							BRANCH ATUAL 
+							EM FRENTE DE UMA BRANCH, QUE É ATRIBUÍDA COMO 
+							A NOVA BRANCH PRINCIPAL DE DESENVOLVIMENTO 
+							{BRANCH.ATRIBUÍDA}
+							3. "REBASEIA" O DESENVOLVIMENTO ATUAL 
+							SOB UMA BRANCH ATRIBUÍDA NA FUNÇÃO 
+							
+								git log --graph 
+							ELE MOSTRA OS REGISTROS DE commits, 
+							E AS LINHAS DE DESENVOLVIMENTO BRANCHES 
+							ATRIBUÍDAS AOS REGISTROS 
+							
+								clear 
+							LIMPA A TELA DOS COMANDOS JÁ EXECUTADOS 
+						
+						}
+
+			}
+			
+			
+			5 { MANIPULANDO AS VERSÕES ~19min - 4x
+				I DOCUMENTAÇÃO - @2022.02.23 - 1740 { 
+					I TEORIA - @2022.02.23 - 1740 {
+					
+						PROPRIEDADES: { 
+						
+							git checkout -- <ARQUIVO.EXT> 
+								DESFAZ ALTERAÇÕES ANTES DE USAR git add PARA COMPROMETER
+							
+							git reset HEAD <ARQUIVO.EXT> 
+								DESFAZ A AÇÃO DO git add 
+								PARA APÓS EXECUTAR O git checkout -- <ARQUIVO.EXT> 
+								E DESFAZER ALTERAÇÕES 
+									
+								"HEAD" SIGNIFICA 
+								O ESTADO/LOCAL QUE DEVE RETORNAR, 
+								NO CASO, PARA O ESTADO QUE AINDA ESTOU TRABALHANDO 
+								
+								git revert {hash}
+							NO git log, COPIANDO O HASH DE UM commit, 
+							ATRIBUÍNDO ELE NA PROPRIEDADE, UM COMPROMETIMENTO 
+							DESFAZENDO O commit ATRIBUÍDO É FEITO 
+							ELE PODE SER FEITO COM O hash DO 
+							git log --oneline 
+							
+								git stash 
+							ELE SALVA O DIRETÓRIO ATUAL NO ESTADO ATUAL 
+							ÚTIL PARA SALVAR MODIFICAÇÕES TEMPORARIAMENTE 
+							
+							APÓS SALVO, RETORNA NO ESTADO DO ÚLTIMO COMMIT 
+							PARA POSTERIORMENTE, 
+							AS EDIÇÕES SALVAS EM stash PODEM SER APLICADAS 
+							SOBRE commits 
+							
+								git stash list 
+							EXIBE O ÍNDICE, AS EDIÇÕES SALVAS, E UM RESUMO DO QUE SE 
+							TRATA O STASH 
+							
+								git stash apply {ÍNDICE.DO.STASH}
+							APLICA AS EDIÇÕES SALVAS NO STASH, NO BRANCH ATUAL 
+							
+								git stash drop 
+							DELETA AS EDIÇÕES SALVAS DO STASH 
+							
+								git stash pop 
+							APLICA & DELETA AS EDIÇÕES SALVAS NO STASH 
+							COM UMA PROPRIEDADE merge ANÁLOGA 
+							
+								git checkout {hash}
+							1. SEU REPOSITÓRIO ENTRA NUM ESTADO DE VISUALIZAÇÃO E EDIÇÃO 
+							DO CÓDIGO NO ESTADO DO commit DO {hash} ATRIBUÍDO 
+							SEM VÍNCULO COM SUA PASTA DO REPOSITÓRIO ATUAL 
+							2. NESTE ESTADO DE CHECKOUT, PODEMOS : 
+								git checkout -b {nome.novo.branch}
+									AGORA SERÁ FEITA UMA NOVA LINHA DE DESENVOLVIMENTO 
+								git commit 
+									NOVOS RAMOS (branches) DO REPOSITÓRIO SERÃO SALVOS
+									BASEADOS NA BRANCH PASSADA
+							
+							
+					}
+					
+					
+							EXEMPLO { 
+								No último vídeo, nós aprendemos a desfazer alterações das quais 
+								não vamos precisar mais.
+
+								Quais os comandos, respectivamente, desfazem alterações antes de 
+								adicioná-las (1); depois de adicioná-las, mas antes de 
+								commitá-las (2); e após realizar o commit (3)?
+								
+									1. 
+										1 - git revert
+
+										2 - git reset
+
+										3 - git checkout
+									
+									2.
+										1 - git rm
+
+										2 - git reset
+
+										3 - git bisect
+									
+									3. 
+										1 - git checkout -- <ARQUIVO.EXT>
+
+										2 - git reset HEAD <ARQUIVO.EXT> 
+
+										3 - git revert {hash}
+									
+								R: Alternativa correta! Com o git checkout nós desfazemos uma alteração 
+								que ainda não foi adicionada ao index ou stage, ou seja, antes do git add. 
+								Depois de adicionar com git add, para desfazer uma alteração, precisamos 
+								tirá-la deste estado, com git reset. Agora, se já realizamos o commit, o 
+								comando git revert pode nos salvar.
+								
+							}
+							
+							EXEMPLO {
+							
+								Vimos como podemos utilizar git stash para armazenar 
+								temporariamente algumas de nossas alterações.
+
+								Em que momento o stash parece útil?
+								
+									1. Qgit uando finalizamos uma tarefa e queremos salvar estas alterações
+									
+									2. Quando queremos ver como o nosso código era antes
+									
+									3. Quando precisamos parar o desenvolvimento de algo no meio para 
+									trabalhar em outra coisa
+									
+								R: 3
+								Alternativa correta! Quando precisamos pausar o desenvolvimento de 
+								alguma funcionalidade, ou correção, antes de finalizar, talvez não 
+								seja interessante realizar um commit, pois o nosso código pode não 
+								estar funcionando ainda. Nesse caso é interessante salvar o trabalho 
+								para podermos voltar a ele depois.
+								
+							}
+							
+							EXEMPLO (VISUALIZAR commit ANTERIORES) 
+							com VISUALIZING GIT { 
+							
+								git commit
+								git commit
+								git commit
+								
+								git checkout {hash.1º.commit}
+								git commit 
+								ELE GERA UM BRANCH INEXISTENTE. 
+									VOLTANDO AO BRANCH "MASTER"
+									TAL LINHA DE TRABALHO DEIXA DE EXISTIR 
+									
+								git checkout {hash.1º.commit}
+								
+								git checkout -b {nome.novo.branch}
+									AGORA SERÁ FEITA UMA NOVA LINHA DE DESENVOLVIMENTO 
+								git commit 
+									NOVOS RAMOS (branches) DO REPOSITÓRIO SERÃO SALVOS
+									BASEADOS NA BRANCH PASSADA
+							
+							}
+					
+							EXEMPLO {
+								
+								Já utilizamos em mais de uma ocasião o comando git checkout.
+
+								Resumidamente, para que serve o comando git checkout?
+								
+									1. Para deixar o nosso código em determinado estado
+									
+									2. Para ver o nosso código antigo
+									
+									3. Para sincronizar dados com o repositório remoto
+									
+								R: 1
+								Alternativa correta! A descrição do comando 
+								git checkout --help
+								em uma tradução livre é: "Atualizar os arquivos na 
+								working tree para ficarem na versão especificada. [...]". 
+								Basicamente, podemos deixar o nosso código no estado do 
+								último commit de uma branch, de um commit específico, ou mesmo 
+								tags (que veremos adiante).
+							}
+					
+					}
+					F TEORIA - @2022.02.27 - 1845 T = 1h05m
+					
+					I PRÁTICA - @2022.03.01 - 1313 { 
+					
+						1) Na pasta que representa o seu projeto, faça uma alteração qualquer 
+							no arquivo index.html;
+
+						2) Execute o git status e veja que há uma alteração para adicionar;
+							
+						3) Execute o comando git checkout -- index.html. Confira se sua alteração 
+						foi desfeita;
+
+						4) Novamente, faça alguma alteração no arquivo index.html;
+
+						5) Execute o comando git add index.html;
+						
+						6) Execute o comando 
+							git reset HEAD index.html 
+						para trazer o arquivo index.html de volta para a HEAD do 
+						projeto (remover do stage, que é o que será enviado para o commit);
+
+						7) Repita o passo 3;
+
+						8) Faça mais uma vez alguma alteração no código;
+
+						9) Execute o comando git add index.html e o comando 
+							git commit -m "Alterando o código" 
+						para realizar um commit;
+
+						10) Execute o comando git log e copie o hash deste commit recém criado;
+
+						11) Rode o comando git revert {hash}, substituindo {hash} 
+						pelo hash que você copiou anteriormente;
+
+						12) Confira que suas alterações foram desfeitas;
+						
+						df3755052607de4c458b7edc3e09ecb715860b42
+
+						13) Mude o nome do curso de Ansible para 
+						"Ansible: Infraestrutura como código";
+
+						14) Execute o comando git stash para salvar estas alterações na stash;
+
+						15) Altere o nome do curso de Kubernetes para 
+						"Kubernetes: Introdução a orquestração de containers";
+
+						16) Execute o comando git add index.html e o comando 
+							git commit -m "Alterando o nome do curso de Kubernetes" 
+							para 
+						realizar um commit;
+
+						17) Execute o comando git stash pop para trazer a última 
+						alteração da stash;
+
+						18) Execute o comando 
+							git add index.html 
+						e o comando 
+							git commit -m "Alterando o nome do curso de Ansible" 
+						para realizar um commit;
+
+						19) Execute o comando git push local master para enviar todas as 
+						suas alterações;
+
+						20) Execute o comando git log --oneline para ver os commits 
+						de forma resumida.
+						Copie o hash do commit de merge com a branch lista;
+
+						21) Execute o comando 
+							git checkout {hash} 
+						substituindo {hash} pelo hash que você copiou;
+
+						22) Veja que diversas alterações não estão mais presentes;
+
+						23) Execute 
+							git checkout master 
+						para voltar à linha principal de desenvolvimento.
+					
+					}
+					F PRÁTICA - @ - 2022.03.01 - 1552 T = 39m 
+				} 
+				F DOCUMENTAÇÃO - @2022.03.01 - 1358 T = 1h18m 
+			
+				1. COMO DESFAZER ALTERAÇÕES NOS MAIS DIVERSOS NÍVEIS DE COMPROMETIMENTOS 
+				(SAVES) EXECUTADOS. (git checkout // git reset head // git revert)
+				
+				2. COMO SALVAR TEMPORARIAMENTE UMA ALTERAÇÃO, RETORNAR À VERSÃO ATUAL 
+				E POSTERIORMENTE, UNIR SUA ALTERAÇÃO À VERSÃO VIGENTE (git stash)
+				
+				3. COMO VISUALIZAR ESTADOS ANTERIORES COMPROMETIDOS, 
+				E INICIAR NOVAS LINHAS DE DESENVOLVIMENTO (branches), 
+				BASEADAS EM TAIS ESTADOS ANTERIORES
+			
+			
+						PROPRIEDADES: { 
+						
+							git checkout -- <ARQUIVO.EXT> 
+								DESFAZ ALTERAÇÕES ANTES DE USAR git add PARA COMPROMETER
+							
+							git reset HEAD <ARQUIVO.EXT> 
+								DESFAZ A AÇÃO DO git add 
+								PARA APÓS EXECUTAR O git checkout -- <ARQUIVO.EXT> 
+								E DESFAZER ALTERAÇÕES 
+									
+								"HEAD" SIGNIFICA 
+								O ESTADO/LOCAL QUE DEVE RETORNAR, 
+								NO CASO, PARA O ESTADO QUE AINDA ESTOU TRABALHANDO 
+								
+								git revert {hash}
+							NO git log, COPIANDO O HASH DE UM commit, 
+							ATRIBUÍNDO ELE NA PROPRIEDADE, UM COMPROMETIMENTO 
+							DESFAZENDO O commit ATRIBUÍDO É FEITO 
+							ELE PODE SER FEITO COM O hash DO 
+							git log --oneline 
+							
+								git stash 
+							ELE SALVA O DIRETÓRIO ATUAL NO ESTADO ATUAL 
+							ÚTIL PARA SALVAR MODIFICAÇÕES TEMPORARIAMENTE 
+							
+							APÓS SALVO, RETORNA NO ESTADO DO ÚLTIMO COMMIT 
+							PARA POSTERIORMENTE, 
+							AS EDIÇÕES SALVAS EM stash PODEM SER APLICADAS 
+							SOBRE commits 
+							
+								git stash list 
+							EXIBE O ÍNDICE, AS EDIÇÕES SALVAS, E UM RESUMO DO QUE SE 
+							TRATA O STASH 
+							
+								git stash apply {ÍNDICE.DO.STASH}
+							APLICA AS EDIÇÕES SALVAS NO STASH, NO BRANCH ATUAL 
+							
+								git stash drop 
+							DELETA AS EDIÇÕES SALVAS DO STASH 
+							
+								git stash pop 
+							APLICA & DELETA AS EDIÇÕES SALVAS NO STASH 
+							COM UMA PROPRIEDADE merge ANÁLOGA 
+							
+								git checkout {hash}
+							1. SEU REPOSITÓRIO ENTRA NUM ESTADO DE VISUALIZAÇÃO E EDIÇÃO 
+							DO CÓDIGO NO ESTADO DO commit DO {hash} ATRIBUÍDO 
+							SEM VÍNCULO COM SUA PASTA DO REPOSITÓRIO ATUAL 
+							2. NESTE ESTADO DE CHECKOUT, PODEMOS : 
+								git checkout -b {nome.novo.branch}
+									AGORA SERÁ FEITA UMA NOVA LINHA DE DESENVOLVIMENTO 
+								git commit 
+									NOVOS RAMOS (branches) DO REPOSITÓRIO SERÃO SALVOS
+									BASEADOS NA BRANCH PASSADA
+							
+					}
+		
+		}
+		
+			6 { GERANDO ENTREGAS ~15min - 6x 
+			
+				I DOCUMENTAÇÃO - @2022.03.03 - 0910 { 
+					I TEORIA - @2022.03.03 - 0910 {
+					
+						EXERCÍCIO { 
+						
+							Com o comando git diff, nós vimos que é possível visualizarmos 
+							as mudanças realizadas em determinado código. Podemos ver as 
+							diferenças entre commits, branches, etc.
+							
+							Como o git diff exibe as mudanças no código?
+							
+								1. 
+									+ linha adicionada
+									- linha removida
+									- linha modificada (versão antiga)
+									+ linha modificada (nova versão)
+								
+								2. 
+									+ linha adicionada
+									# linha removida
+									# linha modificada (versão antiga)
+									+ linha modificada (nova versão)
+								
+								3. 
+									# linha adicionada
+									- linha removida
+									- linha modificada (versão antiga)
+									# linha modificada (nova versão)
+								
+							R: 1
+								Alternativa correta! O sinal de subtração (-) antes da linha 
+								indica que ela não está mais presente no arquivo. 
+								Já o sinal de adição (+) mostra que é uma linha nova. 
+								Alterações são representadas por uma remoção e uma adição de linha.
+						
+						}
+						
+						EXERCÍCIO { 
+						
+							Vimos no último vídeo como gerar versões, ou marcos interessantes 
+							em nosso sistema de controle de versões.
+
+							Que resultado gera o envio de uma tag para o GitHub?
+							
+								1. Nada diferente do que já vemos no terminal
+								
+								2. Gera um pedido de melhoria
+								
+								3. Gera uma Release, ou seja, conseguimos baixar 
+								um arquivo compactado com o nosso código neste ponto
+								
+							R: 3
+							Alternativa correta! O GitHub nos dá a possibilidade de baixar um 
+							arquivo compactado contendo o código no estado em que a tag foi gerada.
+						
+						}
+						
+					}
+					F TEORIA - @2022.03.03 - 1010 T = 1h 
+					
+					I PRÁTICA - @2022.03.03 - 1010 { 
+					
+						1) Execute o comando 
+							git log -p 
+							para ver, junto a cada commit, as alterações nele realizadas;
+
+						2) Execute agora o comando 
+							git log --oneline;
+
+						3) Execute o comando 
+							git diff {hash do commit de merge com lista}..{hash do último commit realizado}
+						;
+
+						4) Execute alguma (pequena) alteração no index.html;
+
+						5) Execute o comando 
+							git diff 
+						e veja esta alteração;
+
+						6) Desfaça esta última alteração;
+							//git checkout {arquivo.ext}
+
+						7) Execute o comando 
+							git tag -a v0.1.0 
+						para criar uma tag no seu código;
+							//é necessário adicionar uma mensagem 
+
+						8) Execute o comando 
+							git push origin v0.1.0 
+						para enviar esta tag para o GitHub;
+
+						9) Abra a página do repositório do GitHub que você criou e confira a aba de Releases.
+					
+					} 
+					F PRÁTICA - @2022.03.03 - 1020 T = 20m 
+					
+				}
+				F DOCUMENTAÇÃO - @2022.03.03 - 1025 T = 1h20m
+				
+				1. EXIBIR DIFERENÇAS ENTRE DIFERENTES COMPROMETIMENTOS DO REGISTRO 
+				ATRAVÉS DO HASH DO (git commit) 
+				
+				2. ADICIONAR TAGs (RELEASE) NO ESTADO ATUAL DO REGISTRO 
+				ANALOGO À ENTREGA DE UMA VERSÃO 
+				QUE PODE FICAR DISPONÍVEL PARA DOWNLOAD NO http://github.com 
+				
+				
+				
+						PROPRIEDADES: {
+						
+								git diff 
+							EXIBE AS ÚLTIMAS ALTERAÇÕES EXECUTADAS E AINDA 
+							NÃO ADICIONADAS (PELO git add) 
+							PARA SEREM COMPROMETIDAS (git commit) NO REGISTRO DO TRABALHO 
+							EM VERMELHO O RETIRADO 
+							EM VERDE O ADICIONADO 
+							EM BRANCO, O QUE NÃO FOI MODIFICADO 
+							
+								git diff {HASH.1}..{HASH.2}
+							MOSTRA A DIFERENÇA ENTRE 2 commit (ENDEREÇADOS PELO HASH)
+							EXIBE TODAS AS ATUALIZAÇÕES QUE FORAM FEITAS ENTRE 2 
+							COMPROMETIMENTOS DO CÓDIGO 
+							
+								git log -n {número.de.últimos.commits}
+							EXIBE OS {número.de.últimos.commits} ÚLTIMOS COMPROMETIMENTOS 
+							DO REPOSITÓRIO 
+							
+								git tag -a {NOME.DA.TAG}
+								ou 
+								git tag -a {NOME.DA.TAG} -m "{TEXTO.DE.REGISTRO}"
+							ADICIONA UMA MARCAÇÃO EM UM COMPROMETIMENTO DO REGISTRO, 
+							ÚTIL POR EXEMPLO, NO LANÇAMENTO DE UMA NOVA VERSÃO 
+							TAMBÉM CHAMADA DE "RELEASE" @http://github.com 
+							EXEMPLO DE NOME: 
+								v0.1.0
+								
+								git tag 
+							EXIBE TODAS AS TAGS (EX: VERSÕES) DISPONÍVEIS NO REPOSITÓRIO 
+							TAGS SÃO CHAMADAS DE "RELEASE" NO http://GITHUB.COM
+							
+								git push {NOME.REPOSITÓRIO.REMOTO-git remote} {nome.da.tag}
+							1. ENVIA PARA O REPOSITÓRIO REMOTO (local ou no site github)
+							A VERSÃO ATRIBUÍDA {nome.da.tag} ou {nome.da.branch} 
+							2. IMPORTANTE: ENVIE PRIMEIRO A BRANCH, DEPOIS A VERSÃO ATRIBUÍDA 
+							EXECUTANDO O COMANDO 2 VEZES (O PROFESSOR FEZ ISSO) 
+							3. NO http://github.com AS RELEASES 
+							(COMPROMETIMENTOS ATRIBUÍDOS COM TAGS), PODEM SER BAIXADAS
+						}
+					
+				
+	}	
+
+	}

@@ -1,0 +1,7 @@
+*****************************
+RECURSO IMPORTANTE
+
+ARREDONDAMENTO PARA CASAS DECIMAIS. 
+x:4:1
+arredondar variável x, em 4 casas decimais, sendo 1 após a vírgula
+*****************************
