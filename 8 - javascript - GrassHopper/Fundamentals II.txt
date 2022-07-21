@@ -1,0 +1,556 @@
+  INTERVALOS {
+  @2022/07/14 2301
+  @2022.07.14 2307 T=3m 
+  
+  @4
+   
+  @2022.07.15 1503 
+  @2022.07.15 - 1547 T=45m 
+  
+  @18 
+  
+  @2022.07.18 0157
+  @2022.07.08 - 0220 T=23m
+  
+  17 - 23 - functions
+  
+  @2022.07.18 2024
+  2022.07.18 2124 t=60m
+  
+  @34
+  
+  @2022.07.18 - 2252
+  @2022.07.18 - 2257 t=5m
+  
+  @36
+  
+  @2022.07.19 0217
+  @2022.07.19 0233 t=16m
+  
+  T = 3+45+23+60+5+16= 152m (3h)
+ }
+ 
+  String Manipulation {
+   
+    1 - Cartão postal pós-escalada {
+      print(message);
+      if (message.length > 80) {
+        print('The message is too long for a postcard.');
+      }
+      if (message.length < 80) {
+        print('the message fits on a postcard');
+      }
+      ___
+
+
+      Adicione outra if statement que testa message.length < 80
+      Adicione uma nova função print() dentro da 2ª if statement bloco {} e use o argumento 'The message fits on a postcard'
+
+      print(message);
+      if (message.length > 80) {
+        print('The message is too long for a postcard.');
+      }
+      if (message.length < 80) {
+        print('the message fits on a postcard');
+      }
+      if (message.length < 80) {
+        print('The message fits on a postcard');
+      }
+      ___
+
+    }
+    
+    2 - Quantos caracteres? {
+      print('I code'.lenght);
+      
+      O que esse código imprimirá? 
+      I code 
+      6 
+      5
+      I code.lenght 
+      
+      -> 5
+    }
+    
+    3 - Bot de bate-papo {
+      print(chat);
+      if (chat.includes('hello')) {
+        print('Hi, can I help you pick a destination?');
+      }
+      if (chat === 'bye') {
+        print('See you later, have a great trip!');
+      }
+    }
+   
+    4 - A um dia {
+      var message = 'Today we are going shopping!';
+      message = message.replace('day', 'morrow');
+      print(message);
+   }
+   
+    5 - Existe um dia? { 
+      print('Happy days'.includes('day'));
+
+      -> true
+    }
+    
+    6 - Como vai? { 
+    var greeting = 'Hello, Grasshopper!';
+    greeting = greeting.replace('hopper','jumper');
+    print(greeting);
+    
+    -> Hello, Grassjumper!
+    }
+
+   }
+
+  Alternative Options {
+  
+    7 - Escopo Variável {
+      The scope of an variable defines where it can be used. 
+      A global scope variable can be usea at the whole code 
+      An local scope variable can be used only in the block where it was declared
+      
+      O escopo de uma variável determina onde pode ser usada 
+      Uma variável de escopo global pode ser usada em todo código 
+      Uma variável de escopo local pode ser usada apenas no bloco que foi declarada 
+      
+      var 
+        permite criar variáveis globais 
+      let 
+        permite criar variáveis locais
+        
+      ex: {
+        No código abaixo, a variável myLocalNumber é declarada usando a chave let. Isso significa que ele só existe dentro do bloco da if statement. O impossibleCalculation não funcionará porque a variável myLocalNumber não existe fora da if statement.
+
+        var myGlobalNumber = 5;
+         if (myGlobalNumber > 3) { 
+        let myLocalNumber = 4; 
+        } 
+        var impossibleCalculation = myGlobalNumber + myLocalNumber 
+      }
+      
+      ex: {
+        if (myGlobalNumber > 3) {
+          let myVariable = 10;
+          //ou 
+          //let myVariable = '10';
+        }
+      }
+      
+      ex: {
+        var x = 17;
+        if (x > 10) {
+          let x = 10;
+        }
+        print(x);
+        
+        -> 17
+      }
+      
+      VARIÁVEIS DE ESCOPO LOCAL NÃO PODEM SER USADAS FORA DO ESCOPO ONDE VIVEM 
+      SÃO ÚTEIS EM CASOS ONDE HÁ MUITAS VARIÁVEIS COM NOMES SEMELHANTES NO CÓDIGO 
+    }
+    
+    8 - Guardião da cores {     
+      var color = 'yellow';
+      drawBox(color);
+      for (let color of [
+          'blue',
+          'green',
+          ___
+      ]) {
+        drawBox(color);
+      }
+      drawBox(color);
+      ___
+      
+      FOI CRIADO UMA VARIÁVEL DE ESCOPO GLOBAL (color), QUE NÃO FOI ALTERADO PELO LAÇO DE ESCOPO LOCAL COM VARIÁVEL (color)
+    }
+    
+    9 - Deixar para lá? {
+      var x=10; 
+      if (x>5) {
+        let x=1;
+      } else { 
+        let x=0;
+      }
+      print(x);
+      
+      ->10
+    }
+    
+    10 - Estradas ou trilhos (operadores ternários - alternativa if-else) {
+      var timeOffWork = 7;
+      var daysNeeded = 5;
+      timeOffWork > daysNeeded ? print('Go on vacation') : print('Go to work');
+      var train = 3;
+      var car = 2;
+      car < train ? print('Drive a car') : print('Buy train tickets'edit);
+    }
+    
+    11 - Qual dos três? {
+      Quais são os símbolos que o operador ternário usa? 
+      ?
+      (para if) 
+      
+      :
+      (para else)
+      
+      Também é comum utilizar comparativos para suas estruturas condicionais <> != == ===
+    }
+    
+    12 - Matemática mais simples (operadores de incremento ++ e decremento --) {
+      let x = 5;
+      x++;
+      print('x is ' + x);
+      x--;
+      print('x is now ' + x);
+    }
+    
+    13 - O inverno está chegando {
+      let ant = 40;
+      let gift = 10;
+      let grasshopper = 0;
+      ant -= gift;
+      grasshopper += gift;
+      print('The Ant has ' + ant + ' seeds, and the Grasshopper has ' + grasshopper + ' seeds');
+    }
+    
+    14 - Subtração ou soma? { 
+      let x = 3; 
+      x += 2; 
+      print(x);
+      
+      -> 5
+    }
+    
+    15 - Registro de console {
+      print('In Grasshopper, the print() function logs strings and numbers to the console window');
+      console.log('console.log can also log to the console window');
+      console.log('teste console'edit);
+    }
+    
+    16 - Onde registrar? {
+      Como o método .log() deve ser chamado para imprimir uma string? 
+      
+      -> console
+      no caso; console.log()
+    }
+  }
+  
+  Functions { 
+  
+    17 - Casa de câmbio (funções) { 
+      function inYen(dollars, ___) {
+        let amount = dollars * 113;
+        return amount;
+      } ;
+      console.log('20 US dollars is:');
+      console.log(inYen(20) + ' Japanese yen');
+      console.log('100 US dollars is:');
+      console.log(inYen(100edit) + ' Japanese yen');
+    }
+    
+    18 - Um pouco mais de mudança {
+      let wallet = 50;
+      function inYen(dollars, ___) {
+        let yen = dollars * 113;
+        return yen;
+      } ;
+      function inBaht(dollars, ___) {
+        let baht = dollars * 33;
+        return baht;
+      } ;
+      console.log(wallet + ' US dollars is:');
+      console.log(inYen(wallet) + ' Japanese yen');
+      console.log(inBaht(wallet) + ' Thai baht');
+
+    }
+    
+    19 - A metade? {
+      function half(value) {
+        return value/2;
+      }
+      let x=8; 
+      console.log(half(x));
+      
+      ->4
+    }
+    
+    20 - Ao máximo {
+      function larger(a, b, ___) {
+        return a > b ? a : b;
+      } ;
+      function maximum(array, ___) {
+        let max = 0;
+        for (let num of array) {
+          max = larger(max, num);
+        }
+        return max;
+      } ;
+      console.log(list);
+      console.log(maximum(list));
+      ___
+    }
+    
+    21 - Substituição de recursão {
+      function updateAllNames(string, oldPart, newPart, ___) {
+        if (string.includes(oldPart) === false) {
+          return string;
+        }
+        string = string.replace(oldPart, newPart);
+        return updateAllNames(string, oldPart, newPart);
+        ___
+      } ;
+      console.log(travelDocument);
+      console.log(updateAllNames(travelDocument, 'grasshoper', 'grasshopper'));
+    }
+    
+    22 - Quando irá parar? {
+      function sumUpTo(number) {
+        if (number === 1) {
+        return 1;
+        }
+        return number + sumUpTo(number - 1);
+      }
+      
+      console.log(sumUpTo(2));
+      
+      -> quando number = 1
+    }
+    
+    23 - Meu assistente {
+      function myAssistant(time, callbackFunction, ___) {
+        console.log('I am your personal assistant, and I am happy to help with your request');
+        callbackFunction(time, ___);
+      } ;
+      myAssistant('6pm', recordShow);
+      myAssistant('12:00', turnOnLights);
+      ___
+    }
+    
+    24 - Atualização do assistente (import) {
+      import { recordShow, setAlarm, turnOffFan, turnOnFan, turnOffLight, turnOnLight } from 'assistantFunctions';
+      function myAssistant(time, callbackFunction, ___) {
+        console.log('Scheduling:');
+        callbackFunction(time, ___);
+        console.log('Complete.');
+      } ;
+      myAssistant('8am', turnOnFan);
+      myAssistant('18:00', turnOffFan);
+      ___
+    }
+  
+  }
+  
+  Array Manipulation {
+  
+    25 - Quantos? {
+      import { listOfDestinations } from 'grasshopper.travel';
+      let numberOfDestinations = listOfDestinations.length;
+      console.log('There are ' + numberOfDestinations + ' to choose from.');
+    }
+    
+    26 - Corrija os dados (.slice({indice-início};{índice-fim}) - retira elemento em função dos índices atribuídos como parâmetro na função) {
+      import { transportation } from 'grasshopper.travel';
+      let cities = [
+        'London',
+        'London',
+        'London',
+        'Lagos',
+        'Lisbon',
+        'Louisville',
+        ___
+      ];
+      console.log(cities.slice(2, 6));
+      console.log(transportation.slice(2, 6));
+      ___
+      
+      os índices do array começam em no primeiro elemento índice 0
+    }
+    
+    27 - Um novo lugar (.push() ) {
+      import { travelToCities } from 'grasshopper.travel';
+      let last = travelToCities[travelToCities.length - 1];
+      console.log(last.destination);
+      let boatAtlanta = {
+        destination: 'Atlanta',
+        transportMode: 'boat',
+        cost: 200,
+        country: 'Hoptopia',
+        ___: ___
+      } ;
+      travelToCities.push(boatAtlanta);
+      last = travelToCities[travelToCities.length - 1];
+      console.log(last.destination);
+      ___
+    }
+    
+    28 - Um novo caminho {
+      import { travelToCities } from 'grasshopper.travel';
+      let atlantaTravel = travelToCities.pop();
+      atlantaTravel.transportMode = 'hovercraft';
+      travelToCities.push(atlantaTravel);
+      let last = travelToCities[travelToCities.length - 1];
+      console.log(last.destination);
+      console.log(last.transportMode);
+      ___
+    }
+    
+    29 - O que há na lista? {
+      let array = ['Ant', 'Bear', 'Camel', 'Dodo'];
+      array.pop();
+      array.push('Zebra');
+      console.log(array);
+      
+      O método .pop()removerá o último item de uma array.
+      -> Ant, Bear, Camel, Zebra
+    }
+    
+    30 - Hora de ir (...) {
+      import { flights, trains, buses } from 'grasshopper.travel';
+      let departures = [
+        ...flights,
+        ...trains,
+        ...buses,
+        ___
+      ];
+      for (let time of departures) {
+        console.log(time);
+      }
+      console.log(departures.length + ' total times');
+    }
+    
+    31 - Noite e dia (método .filter() "Você usou o método de filtro para selecionar elementos de uma array com base em seus valores." ) {
+      import { departures } from 'grasshopper.travel';
+      function morning(time, ___) {
+        return time.includes('am');
+      } ;
+      function evening(time, ___) {
+        return time.includes('pm');
+      } ;
+      let amTimes = departures.filter(morning);
+      let pmTimes = departures.filter(evening);
+      ___
+      console.log('Day times: ' + amTimes);
+      console.log('Night times: ' + pmTimes);
+    }
+    
+    32 - Escontrar um bom negócio (método forEach() "Você usou o método de array .forEach() para aplicar uma função de retorno de chamada a cada elemento em uma array.") {
+      import { flightPrices } from 'grasshopper.travel';
+      let max = flightPrices[0];
+      let min = flightPrices[0];
+      function compareToMaximum(value, ___) {
+        max = value > max ? value : max;
+      } ;
+      function compareToMinimum(value, ___) {
+        min = value < min ? value : min;
+      } ;
+      console.log(flightPrices);
+      flightPrices.forEach(compareToMaximum);
+      console.log('Maximum: ' + max);
+      flightPrices.forEach(compareToMinimum);
+      console.log('Minimum: ' + min);
+    }
+    
+    33 - Qual é o negócio? {
+      let hotelPrices = [300, 95, 130]; 
+      
+      function findDeals(price) {
+        if (price < 100) {
+          console.log('$' + price + ' is a good deal!')
+        }
+      }
+      
+      hotelPrices.forEach(findDeals); 
+      
+      -> $95 is a good deal!
+      O método .forEach() roda a função findDeals em cada item em uma array. Se um item da array for menor que 100, o preço é registrado no console.
+    }
+  
+  }
+  
+  Hotel search {
+    34 - Obtenha o que você pede (API - "Você usou um método importado da API grasshopper.reviews para exibir uma lista de avaliações de hotéis.") {
+      import { getData, findHotels } from 'grasshopper.reviews';
+      function printHotel(hotel, ___) {
+        console.log('___HOTEL_INFO___');
+        console.log('type: ' + hotel.type);
+        console.log('city: ' + hotel.city);
+        console.log('price: ' + hotel.price);
+        console.log('rating: ' + hotel.rating);
+      } ;
+      let grasslandHotels = getData('Grassland', findHotels, ___);
+      grasslandHotels.forEach(printHotel);
+    }
+    
+    35 - De qualquer modo (laço for of "Você usou um laço for...of e console.log() para exibir todas as análises de hotéis em Grassland.") {
+    import { getData, findHotels } from 'grasshopper.reviews';
+    let grasslandHotels = getData('Grassland', findHotels, ___);
+    for (var element of grasslandHotels) {
+      console.log(element.rating);
+    }
+    }
+    
+    36 - Adicionar à lista {
+      import { getData, findHotels } from 'grasshopper.reviews';
+      function getRatings(hotelList, ___) {
+        let ratings = [
+          ___
+        ];
+        for (var element of hotelList) {
+          ratings.push(element.rating);
+        }
+        return ratings;
+      } ;
+      let grasslandHotels = getData('Grassland', findHotels, ___);
+      console.log('Ratings Array:');
+      console.log(getRatings(grasslandHotels));
+    }
+    
+    37 - Divida igualmente ("Você criou uma função que usa uma array de números para gerar o valor médio desses números.") {
+      import { getData, findHotels } from 'grasshopper.reviews';
+      import { getRatings } from 'myFunctions';
+      function average(array, ___) {
+        let total = 0;
+        for (let element of array) {
+          total += element;
+        }
+        return total / array.length;
+      } ;
+      let grasslandRatings = getRatings(getData('Grassland', findHotels, ___), ___);
+      console.log(grasslandRatings);
+      console.log('The average is:');
+      console.log(average(grasslandRatings));
+    }
+    
+    38 - Cálculo da média ("Você atualizou uma declaração de função que obtém uma lista de análises de hotéis e calcula a classificação média do hotel.") {
+      import { getData, findHotels } from 'grasshopper.reviews';
+      import { average, getRatings } from 'myFunctions';
+      function averageRating(hotelList, ___) {
+        let ratings = getRatings(hotelList, ___);
+        return average(ratings, ___);
+      } ;
+      let grasslandHotels = getData('Grassland', findHotels, ___);
+      console.log('Average Grassland hotel rating:');
+      console.log(averageRating(grasslandHotels));
+      let hoptropolisHotels = getData('Hoptropolis', findHotels, ___);
+      console.log('Average Hoptropolis hotel rating:');
+      console.log(averageRating(hoptropolisHotels));
+    }
+    
+    39 - Pelo preço certo ("Você criou um filtro para selecionar hotéis com um .price inferior a $ 100. Em seguida, você usou esse filtro para obter a avaliação média de todos os hotéis em Grassland abaixo de $ 100 por noite.") {
+      import { getData, findHotels } from 'grasshopper.reviews';
+      import { averageRating } from 'myFunctions';
+      let grasslandHotels = getData('Grassland', findHotels, ___);
+      function underAHundred(hotel, ___) {
+        return hotel.price < 100;
+      } ;
+      let affordableHotels = grasslandHotels.filter(underAHundred);
+      ___
+      console.log('Average Rating in Grassland under $100:');
+      console.log(averageRating(affordableHotels, ___));
+    }
+  }
+  

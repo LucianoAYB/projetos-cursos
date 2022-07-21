@@ -1,0 +1,161 @@
+comandos JS
+TUDO É CASE-SENSITIVE (maiusculas e minusculas importam)
+ERROS MOSTRAM O NÚMERO DA LINHA
+  console.log("" || '');
+  alert("");
+  <script src="endereço.js"></script>
+  //
+    comentários de linha 
+  /* */
+    comentários de bloco 
+  
+    COMENTÁRIOS SÃO EXIBIDOS NO CÓDIGO-FONTE
+  
+  var olaMundo = "Olá mundo!"
+  console.log(olaMundo);
+      DECLARAÇÃO DE VARIÁVEIS 
+  
+  let
+  declara variável em escopo específico 
+  
+  const
+  declara constantes (que não podem mudar uma vez declarada)
+  
+  number
+  declara numeros (ponto é o divisor decimal)
+  
+  array
+  matriz ou vetor 
+  
+  typeof
+  mostra o tipo de variável 
+  
+  (confoirmar) stanceOf
+  de que objeto veio aquela variável 
+  
+  dados boleanos 
+  
+  funções dentro de variáveis 
+  
+  parseInt
+  parseFloat
+  variáveis podem mudar seu tipo durante o código 
+  
+  = 
+  operador de atribuição 
+  
+  let a = 10; 
+  const b = 20; 
+  
+  ==
+  operador de comparação booleana igualdade
+  
+  console.log(a == b);
+  
+  podemos comparar um número com um string
+  por exemplo: {
+    const b = "20"; //string 
+    let a = 20; 
+    é válido 
+  }
+  
+  ===
+  compara variáveis incluíndo seu tipo 
+  no caso, ao comparar uma string com um número (ainda que iguais) não serão declarados iguais 
+  
+  !==
+  compara variáveis respondendo se são diferentes (comparando o valor e tipo)
+  
+  !=
+  compara variáveis respondendo se são diferentes (independente do tipo)
+  
+  &&
+  e
+  processa 2 valores booleanos, comparando se são iguais, resultando em 1 valor booleano s/n || 1/0
+  {
+  console.log(a == b && typeof b == 'string');
+  }
+  || 
+  ou
+  processa 2 valores booleanos, comparando se ao menos uma seja válida, resultando em 1 valor booleano 
+  
+  ++
+  incrementa 1 ao valor 
+  
+  --
+  decremento de 1
+  EXEMPLO: {
+  if (cor === "verde") { 
+    console.log("siga");
+  } else { 
+    console.log("pare);
+  }
+  }
+  
+  EXEMPLO ELSE IF: {
+  if (cor === "verde") { 
+    console.log("siga");
+  } else if (cor==="amarelo") {
+    console.log("atenção");
+  } else { 
+    console.log("pare);
+  }
+  }
+  
+  O ERRO É SEMPRE SEU
+  
+  switch 
+  escolha-caso 
+  
+  let cor = "azul";
+  switch (cor) {
+    case "verde":
+      console.log("siga");
+      break;
+    
+    case "amarelo": 
+      console.log("atenção");
+      break;
+    
+    case "vermelho": 
+      console.log("pare");
+      break;
+      
+    default: 
+      console.log("não sei");
+  }
+  
+  laço for
+  caso saiba o número de repetições 
+  (inicio) até (onde) (incremento)
+  
+  for each (chamado de array) repete algo em cada repetição 
+  
+  for in (percorre nome de atributos de objetos)
+  
+  while 
+  
+  break (interrompe o laço)
+  
+  continue (ignore as instruções a seguir e siga em frente)
+  tipo, ignora os comandos do laço, e siga sua contagem. 
+  
+  TABUADA DO 5
+  {
+  let n=5; 
+  for (let i = 0; i<=10; i++) {
+    console.log(`${i} X ${n} = $(i*n}`);
+    //padrão de concatenação template-string
+    
+    console.log(i + " X " + n + " = " + (i * n));
+    //exemplo concatenação 
+    
+  }
+  }
+  Ela será executada no console 
+  este é um laço e o incremento 
+  
+  Utilizamos template-string (${}) que permite escrever texto em várias linhas e colocar comandos dentro dele (tipo a multiplicação na string da tabuada)
+  ISSO É O APRIMORAMENTO DA CONCATENAÇÃO (de algoritmos)
+  
+  

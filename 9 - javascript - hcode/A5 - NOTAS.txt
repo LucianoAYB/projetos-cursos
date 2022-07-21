@@ -1,0 +1,345 @@
+javascript básico ii
+14/07/2022 0408
+
+função soma.js 
+  function somar (x1, x2) { 
+    return x1 + x2;
+  }
+  
+  let resultado = somar(1, 2);
+  
+  console.log(resultado);
+  
+função operação.js {
+  function calc (x1, x2, operador) { 
+    return eval`${x1} ${operador} ${x2}`;
+  }
+  
+  let resultado = somar(1, 2, "+");
+  
+  console.log(resultado);
+  
+
+  eval() {
+    avalia uma sting para interpretar uma string (por exemplo, uma operação) conforme exemplo mostrado acima 
+  }
+  
+EXEMPLO FUNÇÃO ANONIMA {
+
+  (function (x1, x2, operador) { 
+  return eval(`${x1} ${operador} ${x2}`);
+  })(1, 2, "*")
+  //deixe-a entre parênteses a função sem nome; últimos termos entre parênteses são os parâmetros que podem ser atribuídos logo após a função 
+}
+17/07/2022 0421 t=13m v=09:22
+
+17/07/2022 1533 v@0922
+
+arrow functions: 
+  é uma forma mais simples de escrever uma função 
+  exemplo: {
+    let calc = (x1, x2, operador) {
+      return eval(`${x1} ${operador} ${x2}`);
+    }
+    
+    let resultado = calc(1, 2, "*"); 
+    console.log(resultado);
+  }
+  
+  callback 
+  é uma função de retorno dentro de uma ação 
+  
+  DOM (document object model)
+  é uma arvore que o javascript manipula elementos do html; sempre que queremos interagir com o que o usuário visualiza, o DOM será manipulado; queremos interagir com o comportamento do usuário no html, logo será usado; podemos inserir e retirar coisas do html com o DOM, o javascript dá vida ao código; alterações que dependem do usuário depende do javascript e passam pelo DOM. 
+  
+  Eventos 
+  com eles conseguimos reagir ao que o usuário está fazendo; pegue um botão e se ele clicar, pode ser chamado uma função de enviar formulário; entre outros eventos que disparam nossos algoritmos; existem eventos de MOUSE, TECLADO, TEMPO, PERSONALIZADOS. 
+  EXEMPLO: { 
+    window.addEventListener('focus', event => {
+      console.log("focus");
+    })
+  }
+  este exemplo, ao clicar fora do navegador "perder o foco dele", e clicar de volta "retornar o foco", é disparado console.log("focus"); no console. 
+  note que addEventListener parece uma função, e seu segundo argumento é uma função
+  
+  EXEMPLO: {
+    documento.addEventListener('click', event => {
+      console.log('click');
+    })
+  }
+  este exemplo ao clicar dentro do body da página ocorre o evento de clicar; em seguinda é disparado console.log('click'); sendo o DOCUMENTO = BODY (página). 
+  
+  window - vetor para manipular eventos; 
+  window - janela 
+  document - site
+  window - acesso a: histórico do usuário; refresh na janela; propriedades da janela; abrir uma janela (window.open); fechar uma janela (window.close); dar foco a uma janela (window.focus); 
+  
+  sempre que trabalharmos com eventos, lembre-se da estrutura; 
+    Listener
+  adicione uma escuta para um evento; o que devo escutar (Listener) o que devo fazer (arrow function =>); 
+  
+  Date.now();
+  quanto trabalhamos com datas, temos um objeto||classe pronta para se tornar um objeto Date.now();
+  EXEMPLO: {
+    let agora = Date.now();
+    console.log(agora);
+  }
+  é exibido um TimeStamp no console (unidade = segundos)
+  segundos desde 01/01/1970 até hoje
+  datas anteriores são negativas 
+  
+  new Date();
+  EXEMPLO: {
+    let agora = new Date.now();
+    console.log(agora);
+  }
+  Neste exemplo com new, a data se torna mais legível, e vem o fuso horário e a data 
+  
+  console.log({var}.getDate()); 
+  console.log({var}.getfullYear()); 
+  //É em 4 dígitos 
+  console.log({var}.getMonth()); 
+  //Month começa contagem em 0 (para janeiro) e 11 (para dezembro)
+  
+  Para ficar mais legível, podemos manipular cada parte da data 
+  EXEMPLO: {
+    let agora = new Date.now();
+    console.log(agora.getDate());
+  }
+  
+  Para globalizar a data em função do local global em pt-br no caso
+  EXEMPLO: {
+    let agora = new Date.now();
+    console.log(agora.toLocaleDateString("pt-br"));
+  }
+  retorna: dd/mm/aaaa
+  
+  array 
+  
+    exemplo: {
+      let carros = ["palio 98", "toro", "uno", 15, true, new Date(), function(){}, ...];
+    }
+    Os índices das variáveis de uma array começam em 0
+    
+    exemplo: {
+      let carros = ["palio 98", "toro", "uno", 15, true, new Date(), function(){}, ...];
+      
+      console.log(carros);
+    }
+    coletando dados de array, será exibido todos os 7 ítens 
+    
+    exemplo: {
+      let carros = ["palio 98", "toro", "uno", 15, true, new Date(), function(){}, ...];
+      
+      console.log(carros.lenght);
+    }
+    coleta o tamanho em número de ítens da array 
+    
+    exemplo: {
+      let carros = ["palio 98", "toro", "uno", 15, true, new Date(), function(){}, ...];
+      console.log(carros[{0}]);
+      //console.log(carros[{número.índex}]);
+    }
+    coleta o primeiro ítem do array
+    
+    exemplo: {
+      let carros = ["palio 98", "toro", "uno", 15, true, new Date(), function(){}, ...];
+      console.log(carros[5].getFullYear());
+    }
+    coleta o ano getFullYear() da variável de data indexada no array new Date() de index=5 pois começa em "palio98" index=0
+    
+    exemplo: {
+      let carros = ["palio 98", "toro", "uno", 15, true, new Date(), function(){}, ...];
+      console.log(carros[6](x1,x2));
+    }
+    invoca uma função do array com parâmetros de exemplo x1 e x2
+    
+    
+
+    
+17/07/2022 1623 t=13m+50m v4208 v@=2537
+T@63m
+
+19/07/2022 1454 v@2500
+
+    MÉTODO .forEach
+    laço
+    percorre o array para trabalhar com os dados dentro dele 
+    
+      let carros = ["palio 98", "toro", "uno", 15, true, new Date(), function(){}, ...];
+      
+      carros.forEach(function(value{valor do array no momento atual}, index{posição índice do item do array}){
+        console.log(index,value);
+      });
+      
+      -> é exibido no console o índice e o valor de cada elemento do array 
+      
+    
+    Objetos - ORIENTAÇÃO A OBJETOS 
+      é uma forma de programar que reutiliza código 
+      
+      tudo acontece em uma classe (conjunto de atributos (informações) e métodos(o que deve acontecer))
+      
+      classe (por exemplo, uma calculadora)
+        Tudo o que tem relação com ela está dentro dela (variáveis (atributo - quando dentro de classe) & funções (métodos - quando dentro de classe))
+        Dentro de uma classe posso chamar um atriburo onde quiser, 
+        Posso colocar recursos e controlar quem chama os recursos e como eles serão chamados. 
+        
+        Comando interno de uma classe para invocar um método ou atributo 
+          this
+        
+      Como usar uma classe 
+        Comando 
+          new 
+        Exemplo: 
+          let calculator = new calculator
+          //A partir de agora esta variável é uma nova instância da classe calculadora (newCalculator)
+          //INSTÂNCIA: Quando um objeto representa uma classe
+          
+          //Tudo será acessível ao agora objeto newCalculator 
+        
+        O código começa a ficar inteligente quando é criado classes genéricas que podem ser utilizadas em várias circunstâncias e um objeto chama um método e um atributo, tornando o código final mais abstrato e compacto
+        
+        Atributos são propriedades escalares do celular
+        Métodos são o que ele pode fazer (ligação, abrir aplicativo)
+        Eventos são algo que acontece e pode ser monitorado para agir conforme (se alguém liga, por exemplo, o telefone toca)
+        Classe é o parâmetro que engloba tais propriedades, nos exemplos citados a classe é o próprio celular
+        
+        let celular = function(){
+          let cor = "prata";
+        }
+        
+        let objeto = new celular();
+        console.log(objeto)
+        //não será possível identificar a variável "prata", visto que let dentro de uma função é de escopo local
+        //o que declarado na função, fica na função
+        
+        Para eu acessá-la fora da função, ela precisa se tornar um atributo, conforme: 
+      
+        let celular = function(){
+          let this.cor = "prata";
+        }
+        
+        let objeto = new celular();
+        console.log(objeto)
+        //agora cor se torna ATRIBUTO 
+        
+        agora no console, podemos acessar o objeto celular, e podemos ver o atributo de cor "prata"
+        
+        Se quisermos apenas ver o atributo podemos usar o comando: 
+          console.log(objeto.cor);
+        
+        no console -> prata
+        
+        
+        Exemplo 02 
+        let celular = function(){
+          let this.cor = "prata";
+          function ligar(){
+            
+          }
+        }
+        
+        //Não será possível acessar a função interna a função externamente (no escopo global); Para isso um método é necessário conforme: 
+        
+        let celular = function() {
+          let this.cor = "prata";
+          this.ligar(){
+            console.log("uma ligação");
+            return "ligando";
+          }
+        }
+        let objeto = new celular();
+        console.log(objeto.ligar());
+        //agora ligar, com o comando this, se tornou um método 
+        //é possível no escopo global, com o console.log, acessar tal função 
+        Adicione retorno na função com o comando {return} para não dar erro 
+        
+        Nós temos uma função dentro de uma função neste caso; no novo ECMAScript temos uma forma mais polida de escrever classes; Neste caso para definir um novo método o uso do comando function não será mais necessário 
+        
+        index2.js (parâmetro com ECMAScript) - é recomendado nomear arquivos conforme o nome da classe
+          class celular {
+            constructor() {
+              this.cor = "prata";
+            }
+          } 
+          let objeto = new celular();
+          console.log(objeto());
+        
+          //comando {constructor()} é o comando que atribui método padrão da classe; posteriormente invocado por padrão pelo objeto definido por 
+          let objeto = new celular(); 
+          console.log(objeto());,
+        
+        
+        Exemplo LIGAR ECMAScript
+            class celular {
+              constructor() {
+                this.cor = "prata";
+              }
+              ligar() {
+                console.log("uma ligação");
+                return "ligando";
+              }
+            } 
+          let objeto = new celular();
+          console.log(objeto.ligar());
+        
+        Estas são as semânticas e comandos principais do JavaScript e da orientação a objetos
+        
+        Revisão: 
+          Função, Função anônima, ArrowFunction
+          addEventListener()
+          eval()
+          //interpretar string como script; 
+          let thisDay = new Date();
+          console.log(thisDay.toLocaleDateString());
+          //atribuir uma data em função da localização do usuário; o comando {new} transforma uma variável em um objeto; 
+          Uma classe é um conjunto de atributos e métodos
+        
+    F@2022.07.19 - 1550
+    
+    aula 6 - 
+      baixar arquivos entender e organizar a pasta 
+      projetos em javascript precisam de classes, encapsulament, controlar quem pode ou não utilizar algo 
+    
+    aula 7
+      no inicio era programação procedural 
+      escreve o código de forma linear
+      
+      com o passar do tempo, aproveitavam-se códigos copiando códigos fazia uma função aqui, chamava lá 
+      
+      com a orientação a objetos fica mais fácil cria-se uma classe onde fica agrupado regra de negócio 
+      fica agrupada em blocos de códigos chamados como métodos ou funções (fora da classe), trechos de código reutilizáveis. 
+      
+      por exemplo 
+        classe: cadastro do cliente 
+          metodos: cadastro, exclusão, alteração...
+      
+      se alguém precisar dos meus métodos, ele importa a classe e usa da forma como for conveniente
+      é criado uma classe, se for necessária no projeto, cria-se um objeto que representa a classe, tal objeto nomeia-se INSTÂNCIA. 
+      invocando as classes conforme a necessidade e os métodos necessários 
+      Programação orientada a objetos é mais fácil pois não é preciso reprogramar, eu reutilizo código 
+      Bons programadores otimizam o código (trabalhando orientado a objetos)
+      
+      mvc Model View Controller
+      a interface web era tudo junto no começo; tinha o estilo, o texto, as informações.  
+      
+      o conceito de mvc - meus dados (model) o que vejo (view) e as regras de métodos (controller, método de negócio); o model trata e manipula os dados de acesso, por exemplo. 
+      
+      esta arquitetura facilita o tratamento do projeto em camadas
+      
+      quando uma classe é invocada em um projeto, você precisa de uma representação desta no projeto. o que representa a classe é chamado: OBJETO 
+        
+      Para falar com uma classe precisamos de um objeto que representa a classe isso chama-se: INSTÂNCIA
+      
+      let calculadora = new CalcController; 
+      
+      no caso, calculadora se torna uma nova instância da classe CalcController; 
+      se você estiver em um arquivo separado e desejar associar uma classe a este, é necessário atribuir no arquivo .html antes da chamada do seu script, o arquivo .js que possui a classe que deseja usar 
+      <script src="scripts/controller/CalcController.js"></script>
+      <script src="scripts/calculadora.js"></script>
+      
+      A classe é CalcController
+      A calculadora.js está instanciando esta classe, utilizando. 
+      
+      
